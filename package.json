@@ -16,7 +16,6 @@
     "fix:js": "eslint. --fix",
     "build": "npm run build:js",
     "build:js": "rollup -c",
-    "lint:js": "eslint .",
     "create:lock": "npm i --package-lock-only",
     "version:bump": "npm run version:bump:patch",
     "version:bump:patch": "npm version --no-git-tag-version patch",
