@@ -1,6 +1,9 @@
 {
   "name": "@shgysk8zer0/importmap",
   "version": "1.0.0",
+  "engines": {
+    "node": ">=18.0.0"
+  },
   "description": "Front-End dependencies based on `<script type=\"importmap\">`",
   "type": "module",
   "module": "index.js",
