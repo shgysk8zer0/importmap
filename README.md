@@ -1,2 +1,2 @@
 # importmap
-Front-End dependencies based on `&lt;script type="importmap">`
+Front-End dependencies based on `<script type="importmap">`
