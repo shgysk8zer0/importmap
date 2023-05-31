@@ -1,0 +1,38 @@
+{
+    "env": {
+        "browser": true,
+        "es6": true
+    },
+    "extends": "eslint:recommended",
+    "parserOptions": {
+        "sourceType": "module",
+        "ecmaVersion": 2020
+    },
+    "plugins": [],
+    "rules": {
+        "indent": [
+            2,
+            "tab",
+            {
+              "SwitchCase": 1
+            }
+        ],
+        "quotes": [
+            2,
+            "single"
+        ],
+        "semi": [
+            2,
+            "always"
+        ],
+        "no-console": 0,
+        "no-prototype-builtins": 0,
+        "generator-star-spacing": ["error", {
+            "before": false,
+            "after": true,
+            "anonymous": "neither",
+            "method": {"before": true, "after": false}
+        }]
+    },
+    "globals": {}
+}
