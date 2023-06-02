@@ -1,7 +1,7 @@
 export const versions = {
 	'@shgysk8zer0/kazoo': '0.0.16',
 	'@shgysk8zer0/konami': '1.0.9',
-	'@shgysk8zer0/polyfills': '0.0.7',
+	'@shgysk8zer0/polyfills': '0.0.8',
 	'@shgysk8zer0/components': '0.0.9',
 	'@shgysk8zer0/http-status': '1.0.1',
 	'leaflet': '1.9.3',
