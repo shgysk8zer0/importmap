@@ -37,7 +37,6 @@
   },
   "homepage": "https://github.com/shgysk8zer0/importmap#readme",
   "devDependencies": {
-    "eslint": "^8.42.0",
-    "rollup": "^3.24.0"
+    "@shgysk8zer0/js-utils": "^1.0.0"
   }
 }
