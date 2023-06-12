@@ -1,8 +1,8 @@
-export default {
-	input: 'index.js',
+import { getConfig } from '@shgysk8zer0/js-utils/rollup';
+
+export default getConfig('./index.js', {
 	external: ['node:fs/promises', 'node:crypto'],
-	output: {
-		file: 'index.cjs',
-		format: 'cjs',
-	},
-};
+	format: 'cjs',
+	sourcemap: false,
+	minify: false,
+});
