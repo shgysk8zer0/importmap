@@ -6,14 +6,18 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [v1.0.3] - 2023-06-12
+
 ### Added
 - Add `@shgysk8zer0/js-utils`
+- Add `@shgysk8zer0/jswaggersheets`
 
 ### Removed
 - Remove `eslint` and `rollup`
 
 ### Changed
 - Update rollup config
+- Misc. updates
 
 ## [v1.0.2] - 2023-06-01
 

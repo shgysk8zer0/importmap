@@ -7,6 +7,7 @@ export const imports = {
 	'@shgysk8zer0/konami': `https://unpkg.com/@shgysk8zer0/konami@${versions['@shgysk8zer0/konami']}/konami.js`,
 	'@shgysk8zer0/polyfills': `https://unpkg.com/@shgysk8zer0/polyfills@${versions['@shgysk8zer0/polyfills']}/all.min.js`,
 	'@shgysk8zer0/polyfills/': `https://unpkg.com/@shgysk8zer0/polyfills@${versions['@shgysk8zer0/polyfills']}/`,
+	'@shgysk8zer0/jswaggersheets/': `https://unpkg.com/@shgysk8zer0/jswaggersheets@${versions['@shgysk8zer0/polyfills']}/`,
 	'@shgysk8zer0/components/': `https://unpkg.com/@shgysk8zer0/components@${versions['@shgysk8zer0/components']}/`,
 	'@kernvalley/components/': `https://unpkg.com/@shgysk8zer0/components@${versions['@shgysk8zer0/components']}/krv/`,
 	'@shgysk8zer0/http-status': `https://unpkg.com/@shgysk8zer0/http-status@${versions['@shgysk8zer0/http-status']}/http-status.js`,
