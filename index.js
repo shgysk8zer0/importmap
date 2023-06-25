@@ -10,7 +10,7 @@ export const imports = {
 	'@shgysk8zer0/jswaggersheets/': `https://unpkg.com/@shgysk8zer0/jswaggersheets@${versions['@shgysk8zer0/polyfills']}/`,
 	'@shgysk8zer0/http-status': `https://unpkg.com/@shgysk8zer0/http-status@${versions['@shgysk8zer0/http-status']}/http-status.js`,
 	'@shgysk8zer0/components/': `https://unpkg.com/@shgysk8zer0/components@${versions['@shgysk8zer0/components']}/`,
-	'@kernvalley/components/': `https://unpkg.com/@kernvalley/components@${versions['@kernvalley/components']}/krv/`,
+	'@kernvalley/components/': `https://unpkg.com/@kernvalley/components@${versions['@kernvalley/components']}/`,
 	'@webcomponents/custom-elements': `https://unpkg.com/@webcomponents/custom-elements@${versions['@webcomponents/custom-elements']}/custom-elements.min.js`,
 	'leaflet': `https://unpkg.com/leaflet@${versions.leaflet}/dist/leaflet-src.esm.js`,
 	'firebase/': `https://www.gstatic.com/firebasejs/${versions.firebase}/`,
