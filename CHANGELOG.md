@@ -6,6 +6,11 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [v1.0.5] - 2023-06-24
+
+### Fixed
+- Correct path for `@kernvalley/components`
+
 ## [v1.0.4] - 2023-06-24
 
 ### Added
