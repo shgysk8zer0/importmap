@@ -1,6 +1,6 @@
 {
   "name": "@shgysk8zer0/importmap",
-  "version": "1.0.7",
+  "version": "1.0.8",
   "engines": {
     "node": ">=18.0.0"
   },

@@ -4,7 +4,7 @@ export const versions = {
 	'@shgysk8zer0/polyfills': '0.1.2',
 	'@shgysk8zer0/components': '0.0.9',
 	'@shgysk8zer0/http-status': '1.0.2',
-	'@shgysk8zer0/jswaggersheets': '1.0.3',
+	'@shgysk8zer0/jswaggersheets': '1.0.4',
 	'@kernvalley/components': '1.0.1',
 	'@webcomponents/custom-elements': '1.6.0',
 	'leaflet': '1.9.4',
