@@ -6,6 +6,11 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [v1.0.6] - 2023-06-25
+
+### Added
+- Add CLI `importmap-utils -i importmap.json -o importmap.yml`
+
 ## [v1.0.5] - 2023-06-24
 
 ### Fixed

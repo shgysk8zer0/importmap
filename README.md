@@ -70,3 +70,31 @@ Which results in:
 ```html
 <script type="importmap" integrity="sha384-...">{"imports": {}, "scope": {}}</script>
 ```
+
+## CLI
+
+Create / update local importmap JSON or YAML files.
+
+```
+Usage: importmap-utils [options]
+
+CLI utility for updating importmap files
+
+Options:
+  -V, --version              output the version number
+  -i, --input [input]        local JSON or YAML importmap file
+  -e, --encoding [encoding]  encoding (default: "utf8")
+  -f, --format [format]      output format
+  -o, --output <output>      output file
+  -h, --help                 display help for command
+```
+
+### CLI Example
+
+```bash
+importmap-utils -o importmap.json
+
+# Or...
+
+importmap-utils -i importmap.json -o importmap.yml -f yaml
+```
