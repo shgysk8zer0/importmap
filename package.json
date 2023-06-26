@@ -1,6 +1,6 @@
 {
   "name": "@shgysk8zer0/importmap",
-  "version": "1.0.5",
+  "version": "1.0.6",
   "engines": {
     "node": ">=18.0.0"
   },
@@ -11,6 +11,9 @@
   "exports": {
     "import": "./index.js",
     "require": "./index.cjs"
+  },
+  "bin": {
+    "importmap-utils": "./cli.js"
   },
   "scripts": {
     "test": "npm run lint:js && npm run build",
@@ -38,5 +41,9 @@
   "homepage": "https://github.com/shgysk8zer0/importmap#readme",
   "devDependencies": {
     "@shgysk8zer0/js-utils": "^1.0.0"
+  },
+  "dependencies": {
+    "@shgysk8zer0/npm-utils": "^1.0.5",
+    "commander": "^11.0.0"
   }
 }
