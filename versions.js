@@ -5,10 +5,12 @@ export const versions = {
 	'@shgysk8zer0/components': '0.0.9',
 	'@shgysk8zer0/http-status': '1.0.2',
 	'@shgysk8zer0/jswaggersheets': '1.0.4',
-	'@kernvalley/components': '1.0.1',
+	'@kernvalley/components': '1.0.2',
 	'@webcomponents/custom-elements': '1.6.0',
 	'leaflet': '1.9.4',
 	'firebase': '9.22.2',
 	'urlpattern-polyfill': '9.0.0',
 	'highlight.js': '11.8.0',
+	'marked': '5.1.0',
+	'marked-highlight': '2.0.1',
 };

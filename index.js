@@ -17,6 +17,8 @@ export const imports = {
 	'urlpattern-polyfill': `https://unpkg.com/urlpattern-polyfill@${versions['urlpattern-polyfill']}/index.js`,
 	'highlight.js': `https://unpkg.com/@highlightjs/cdn-assets@${versions['highlight.js']}/es/highlight.min.js`,
 	'highlight.js/': `https://unpkg.com/@highlightjs/cdn-assets@${versions['lighlight.js']}/`,
+	'marked': `https://unpkg.com/${versions.marked}/src/marked.js`,
+	'marked-highlight': `https://unpkg.com/marked-highlight@${versions['marked-highlight']}/src/index.js`
 };
 
 export const scope = {};
