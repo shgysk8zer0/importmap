@@ -7,7 +7,8 @@ export const imports = {
 	'@shgysk8zer0/konami': `https://unpkg.com/@shgysk8zer0/konami@${versions['@shgysk8zer0/konami']}/konami.js`,
 	'@shgysk8zer0/polyfills': `https://unpkg.com/@shgysk8zer0/polyfills@${versions['@shgysk8zer0/polyfills']}/all.min.js`,
 	'@shgysk8zer0/polyfills/': `https://unpkg.com/@shgysk8zer0/polyfills@${versions['@shgysk8zer0/polyfills']}/`,
-	'@shgysk8zer0/jswaggersheets/': `https://unpkg.com/@shgysk8zer0/jswaggersheets@${versions['@shgysk8zer0/polyfills']}/`,
+	'@shgysk8zer0/jswaggersheets': `https://unpkg.com/@shgysk8zer0/jswaggersheets@${versions['@shgysk8zer0/jswaggersheets']}/swagger.js`,
+	'@shgysk8zer0/jswaggersheets/': `https://unpkg.com/@shgysk8zer0/jswaggersheets@${versions['@shgysk8zer0/jswaggersheets']}/`,
 	'@shgysk8zer0/http-status': `https://unpkg.com/@shgysk8zer0/http-status@${versions['@shgysk8zer0/http-status']}/http-status.js`,
 	'@shgysk8zer0/components/': `https://unpkg.com/@shgysk8zer0/components@${versions['@shgysk8zer0/components']}/`,
 	'@kernvalley/components/': `https://unpkg.com/@kernvalley/components@${versions['@kernvalley/components']}/`,
@@ -16,8 +17,8 @@ export const imports = {
 	'firebase/': `https://www.gstatic.com/firebasejs/${versions.firebase}/`,
 	'urlpattern-polyfill': `https://unpkg.com/urlpattern-polyfill@${versions['urlpattern-polyfill']}/index.js`,
 	'highlight.js': `https://unpkg.com/@highlightjs/cdn-assets@${versions['highlight.js']}/es/highlight.min.js`,
-	'highlight.js/': `https://unpkg.com/@highlightjs/cdn-assets@${versions['lighlight.js']}/`,
-	'marked': `https://unpkg.com/${versions.marked}/src/marked.js`,
+	'highlight.js/': `https://unpkg.com/@highlightjs/cdn-assets@${versions['highlight.js']}/`,
+	'marked': `https://unpkg.com/marked@${versions.marked}/src/marked.js`,
 	'marked-highlight': `https://unpkg.com/marked-highlight@${versions['marked-highlight']}/src/index.js`
 };
 
