@@ -6,6 +6,14 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [v1.0.11] - 2023-07-01
+
+### Changed
+- Update versions
+
+### Fixed
+- Fix bad URL for `marked`
+
 ## [v1.0.10] - 2023-06-28
 
 ### Fixed
