@@ -1,16 +1,23 @@
 {
   "name": "@shgysk8zer0/importmap",
-  "version": "1.0.11",
+  "version": "1.1.0",
   "engines": {
     "node": ">=18.0.0"
   },
   "description": "Front-End dependencies based on `<script type=\"importmap\">`",
   "type": "module",
-  "module": "index.js",
-  "main": "index.cjs",
+  "module": "./index.js",
+  "main": "./index.cjs",
+  "unpkg": "./index.js",
   "exports": {
-    "import": "./index.js",
-    "require": "./index.cjs"
+    ".": {
+      "import": "./index.js",
+      "require": "./index.cjs"
+    },
+    "./*": {
+      "import": "./*.js",
+      "require": "./*.cjs"
+    }
   },
   "bin": {
     "importmap-utils": "./cli.mjs"
@@ -40,10 +47,10 @@
   },
   "homepage": "https://github.com/shgysk8zer0/importmap#readme",
   "devDependencies": {
-    "@shgysk8zer0/js-utils": "^1.0.0"
+    "@shgysk8zer0/js-utils": "^1.0.1"
   },
   "dependencies": {
-    "@shgysk8zer0/npm-utils": "^1.0.5",
+    "@shgysk8zer0/npm-utils": "^1.1.0",
     "commander": "^11.0.0"
   }
 }
