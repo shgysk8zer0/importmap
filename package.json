@@ -1,6 +1,6 @@
 {
   "name": "@shgysk8zer0/importmap",
-  "version": "1.2.1",
+  "version": "1.2.2",
   "engines": {
     "node": ">=18.0.0"
   },
@@ -23,13 +23,14 @@
     "importmap-utils": "./cli.mjs"
   },
   "scripts": {
-    "test": "npm run lint:js && npm run build",
+    "test": "npm run lint:js && npm run build && npm run test:imports",
     "preversion": "npm test",
     "prepare": "npm run build",
     "lint:js": "eslint .",
     "fix:js": "eslint. --fix",
     "build": "npm run build:js",
     "build:js": "rollup -c",
+    "test:imports": "rollup -c rollup.test.config.js",
     "create:lock": "npm i --package-lock-only --ignore-scripts --no-audit --no-fund",
     "version:bump": "npm run version:bump:patch",
     "version:bump:patch": "npm version --no-git-tag-version patch && npm run create:lock",
@@ -47,7 +48,8 @@
   },
   "homepage": "https://github.com/shgysk8zer0/importmap#readme",
   "devDependencies": {
-    "@shgysk8zer0/js-utils": "^1.0.1"
+    "@shgysk8zer0/js-utils": "^1.0.1",
+    "@shgysk8zer0/rollup-import": "^1.2.0"
   },
   "dependencies": {
     "@shgysk8zer0/npm-utils": "^1.1.0",

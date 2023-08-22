@@ -6,6 +6,15 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [v1.2.2] - 20023-08-22
+
+### Changed
+- Various version updates
+
+### Added
+- Add `@shgysk8zer0/jss`
+- Add test to verify versions/URLs are correct
+
 ## [v1.2.1] - 2023-07-03
 
 ### Fixed
