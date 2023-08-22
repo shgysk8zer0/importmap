@@ -3,3 +3,4 @@
 .eslint*
 *.config.js
 .nvmrc
+test/
