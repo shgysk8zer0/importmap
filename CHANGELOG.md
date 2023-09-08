@@ -6,7 +6,12 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
-## [v1.2.4] - 2023--09-07
+## [v1.2.5] - 2023-09-08
+
+### Fixed
+- Fix typo in mapping for `@shgysk8zer0/jss`
+
+## [v1.2.4] - 2023-09-07
 
 ### Changed
 - Update `@shgysk8zer0/components`
