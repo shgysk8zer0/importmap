@@ -9,7 +9,7 @@ export const imports = {
 	'@shgysk8zer0/polyfills/': `https://unpkg.com/@shgysk8zer0/polyfills@${versions['@shgysk8zer0/polyfills']}/`,
 	'@shgysk8zer0/jswaggersheets': `https://unpkg.com/@shgysk8zer0/jswaggersheets@${versions['@shgysk8zer0/jswaggersheets']}/swagger.js`,
 	'@shgysk8zer0/jswaggersheets/': `https://unpkg.com/@shgysk8zer0/jswaggersheets@${versions['@shgysk8zer0/jswaggersheets']}/`,
-	'@shgysk8zer0/jss/': `https://unpkg.com/@shgysk8zer0/jss@${versions['@shgysk8zer0/jss/']}/`,
+	'@shgysk8zer0/jss/': `https://unpkg.com/@shgysk8zer0/jss@${versions['@shgysk8zer0/jss']}/`,
 	'@shgysk8zer0/http-status': `https://unpkg.com/@shgysk8zer0/http-status@${versions['@shgysk8zer0/http-status']}/http-status.js`,
 	'@shgysk8zer0/components/': `https://unpkg.com/@shgysk8zer0/components@${versions['@shgysk8zer0/components']}/`,
 	'@kernvalley/components/': `https://unpkg.com/@kernvalley/components@${versions['@kernvalley/components']}/`,
