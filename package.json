@@ -52,7 +52,7 @@
     "@shgysk8zer0/rollup-import": "^1.2.0"
   },
   "dependencies": {
-    "@shgysk8zer0/npm-utils": "^1.1.0",
+    "@shgysk8zer0/npm-utils": "^1.1.1",
     "commander": "^11.0.0"
   }
 }
