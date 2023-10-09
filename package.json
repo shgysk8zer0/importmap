@@ -49,7 +49,7 @@
   "homepage": "https://github.com/shgysk8zer0/importmap#readme",
   "devDependencies": {
     "@shgysk8zer0/js-utils": "^1.0.1",
-    "@shgysk8zer0/rollup-import": "^1.2.1"
+    "@shgysk8zer0/rollup-import": "^1.2.2"
   },
   "dependencies": {
     "@shgysk8zer0/npm-utils": "^1.1.2",
