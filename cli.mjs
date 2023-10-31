@@ -5,7 +5,8 @@ import { readJSONFile, writeJSONFile } from '@shgysk8zer0/npm-utils/json';
 import { readYAMLFile, writeYAMLFile } from '@shgysk8zer0/npm-utils/yaml';
 import { program } from 'commander';
 import { extname } from 'node:path';
-import { importmap } from './index.js';
+import { importmap } from './index.mjs';
+import { updateImportMap } from './html.js';
 
 function guessFileType(file) {
 	const ext = extname(file).toLowerCase();
@@ -17,6 +18,9 @@ function guessFileType(file) {
 
 		case '.json':
 			return 'json';
+
+		case '.html':
+			return 'html';
 
 		default:
 			throw new TypeError(`"${ext}" is not a supported file extension for file ${file}.`);
@@ -35,7 +39,7 @@ async function parse(file, { encoding, signal } = {}) {
 }
 
 async function init() {
-	const { version: VERSION } = await readJSONFile(new URL('./package.json', import.meta.url).pathname);
+	const { version: VERSION } = await readJSONFile(new URL('./package.json', import.meta.url));
 
 	program
 		.name('importmap-utils')
@@ -54,7 +58,6 @@ async function init() {
 }
 
 init().then(async ({ opts: { input, encoding, format, output }}) => {
-	console.log({ input, encoding, format, output });
 	const mod = typeof input === 'string'
 		? await parse(input, { encoding }).then(({ imports, scope = {}, ...rest }) => ({
 			...rest,
@@ -72,6 +75,10 @@ init().then(async ({ opts: { input, encoding, format, output }}) => {
 
 		case 'yaml':
 			await writeYAMLFile(output, mod, { encoding });
+			break;
+
+		case 'html':
+			await updateImportMap(output, { spaces: null });
 			break;
 	}
 });

@@ -1,8 +1,14 @@
-import { getConfig } from '@shgysk8zer0/js-utils/rollup';
+import json from '@rollup/plugin-json';
 
-export default getConfig('./index.js', {
-	external: ['node:fs/promises', 'node:crypto'],
-	format: 'cjs',
-	sourcemap: false,
-	minify: false,
-});
+export default {
+	input: 'index.js',
+	output: [{
+		file: 'index.mjs',
+		format: 'esm'
+	}, {
+		file: 'index.cjs',
+		format: 'cjs'
+	}],
+	external: ['node:fs/promises', 'node:crypto', '@shgysk8zer0/npm-utils/yaml.js', '@shgysk8zer0/npm-utils/json.js'],
+	plugins: [json({ preferConst: true })],
+};

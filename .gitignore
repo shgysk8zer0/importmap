@@ -1,5 +1,7 @@
 *.cjs
 *.min.*
+index.mjs
+junk/
 *.map
 # Logs
 logs
