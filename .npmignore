@@ -1,5 +1,6 @@
 .github/
 .editorconfig
+index.js
 .eslint*
 *.config.js
 .nvmrc

@@ -6,6 +6,18 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [v1.3.0] - 2023-10-31
+
+### Added
+- Auto-update from `unpkg.com` (no Firebase updates) by running `update.js`
+
+### Changed
+- Importmap is now stored in `importmap.json`
+- Update `exports`, etc.
+
+### Removed
+- No more `versions.js` - It is directly in the JSON
+
 ## [v1.2.5] - 2023-09-08
 
 ### Fixed

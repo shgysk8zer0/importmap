@@ -1,4 +1,6 @@
 import '@shgysk8zer0/polyfills';
+import * as STATUS from '@shgysk8zer0/consts/status.js';
+import { HTTPError } from '@shgysk8zer0/http/error.js';
 import 'urlpattern-polyfill';
 import '@webcomponents/custom-elements';
 import '@shgysk8zer0/components/leaflet/map.js';
@@ -9,6 +11,8 @@ import { status } from '@shgysk8zer0/http-status';
 import { konami } from '@shgysk8zer0/konami';
 import { ready } from '@shgysk8zer0/kazoo/dom.js';
 import { createSheet } from '@shgysk8zer0/jswaggersheets';
+
+console.log(STATUS, HTTPError);
 
 Promise.all([
 	customElements.whenDefined('krv-events'),

@@ -1,32 +1,13 @@
 import { writeFile } from 'node:fs/promises';
 import { createHash } from 'node:crypto';
-import { versions } from './versions.js';
+import importmap from './importmap.json' with { type: 'json' };
 
-export const imports = {
-	'@shgysk8zer0/kazoo/': `https://unpkg.com/@shgysk8zer0/kazoo@${versions['@shgysk8zer0/kazoo']}/`,
-	'@shgysk8zer0/konami': `https://unpkg.com/@shgysk8zer0/konami@${versions['@shgysk8zer0/konami']}/konami.js`,
-	'@shgysk8zer0/polyfills': `https://unpkg.com/@shgysk8zer0/polyfills@${versions['@shgysk8zer0/polyfills']}/all.min.js`,
-	'@shgysk8zer0/polyfills/': `https://unpkg.com/@shgysk8zer0/polyfills@${versions['@shgysk8zer0/polyfills']}/`,
-	'@shgysk8zer0/jswaggersheets': `https://unpkg.com/@shgysk8zer0/jswaggersheets@${versions['@shgysk8zer0/jswaggersheets']}/swagger.js`,
-	'@shgysk8zer0/jswaggersheets/': `https://unpkg.com/@shgysk8zer0/jswaggersheets@${versions['@shgysk8zer0/jswaggersheets']}/`,
-	'@shgysk8zer0/jss/': `https://unpkg.com/@shgysk8zer0/jss@${versions['@shgysk8zer0/jss']}/`,
-	'@shgysk8zer0/http-status': `https://unpkg.com/@shgysk8zer0/http-status@${versions['@shgysk8zer0/http-status']}/http-status.js`,
-	'@shgysk8zer0/components/': `https://unpkg.com/@shgysk8zer0/components@${versions['@shgysk8zer0/components']}/`,
-	'@kernvalley/components/': `https://unpkg.com/@kernvalley/components@${versions['@kernvalley/components']}/`,
-	'@webcomponents/custom-elements': `https://unpkg.com/@webcomponents/custom-elements@${versions['@webcomponents/custom-elements']}/custom-elements.min.js`,
-	'leaflet': `https://unpkg.com/leaflet@${versions.leaflet}/dist/leaflet-src.esm.js`,
-	'firebase/': `https://www.gstatic.com/firebasejs/${versions.firebase}/`,
-	'urlpattern-polyfill': `https://unpkg.com/urlpattern-polyfill@${versions['urlpattern-polyfill']}/index.js`,
-	'highlight.js': `https://unpkg.com/@highlightjs/cdn-assets@${versions['highlight.js']}/es/highlight.min.js`,
-	'highlight.js/': `https://unpkg.com/@highlightjs/cdn-assets@${versions['highlight.js']}/`,
-	'marked': `https://unpkg.com/marked@${versions.marked}/src/marked.js`,
-	'marked-highlight': `https://unpkg.com/marked-highlight@${versions['marked-highlight']}/src/index.js`
-};
+export const { imports, scope } = importmap;
 
-export const scope = {};
-export const importmap = { imports, scope };
 export const ENCODING = 'utf8';
 export const ALGO = 'sha384';
+export { importmap };
+export * as unpkg from './unpkg.js';
 
 export function mergeWithImportmap({ imports = {}, scope = {}}) {
 	return {
@@ -57,10 +38,8 @@ export function getImportmapIntegrity({
 export function getImportMapScript({
 	importmap = { imports, scope },
 	algo = ALGO,
-	encoding = ENCODING,
 	spaces = 2,
 } = {}) {
-	const integrity = getImportmapIntegrity({ importmap, algo, encoding, spaces });
-	const json = JSON.stringify(importmap, null, spaces);
-	return `<script type="importmap" integrity="${integrity}">${json}</script>`;
+	const integrity = getImportmapIntegrity({ importmap, algo, spaces });
+	return `<script type="importmap" integrity="${integrity}">${JSON.stringify(importmap, null, spaces)}</script>`;
 }
