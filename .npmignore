@@ -1,7 +1,7 @@
 .github/
 .editorconfig
+index.js
 .eslint*
 *.config.js
 .nvmrc
 test/
-junk/
