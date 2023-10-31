@@ -63,11 +63,10 @@
     "@babel/plugin-syntax-import-assertions": "^7.22.5",
     "@rollup/plugin-json": "^6.0.1",
     "@shgysk8zer0/js-utils": "^1.0.1",
-    "@shgysk8zer0/rollup-import": "^1.2.0"
+    "@shgysk8zer0/rollup-import": "^1.2.2"
   },
   "dependencies": {
-    "@shgysk8zer0/npm-utils": "^1.1.0",
-    "cheerio": "^1.0.0-rc.12",
-    "commander": "^11.0.0"
+    "@shgysk8zer0/npm-utils": "^1.1.2",
+    "commander": "^11.1.0"
   }
 }
