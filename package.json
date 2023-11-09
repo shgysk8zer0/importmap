@@ -60,7 +60,7 @@
   "devDependencies": {
     "@babel/eslint-parser": "^7.22.15",
     "@babel/eslint-plugin": "^7.22.10",
-    "@babel/plugin-syntax-import-assertions": "^7.22.5",
+    "@babel/plugin-syntax-import-assertions": "^7.23.3",
     "@rollup/plugin-json": "^6.0.1",
     "@shgysk8zer0/js-utils": "^1.0.1",
     "@shgysk8zer0/rollup-import": "^1.2.2"
