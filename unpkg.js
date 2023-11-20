@@ -1,5 +1,6 @@
 import { readYAMLFile, writeYAMLFile } from '@shgysk8zer0/npm-utils/yaml.js';
 import { readJSONFile, writeJSONFile } from '@shgysk8zer0/npm-utils/json.js';
+import { getFileURL } from '@shgysk8zer0/npm-utils/path.js';
 import { parseUnpkgURL, getUnpkgURL, getLatestVersion, UNPKG } from './utils.js';
 
 export async function update(imports) {
@@ -23,25 +24,38 @@ export async function update(imports) {
 }
 
 export async function updateYAML(file) {
-	const importmap = await readYAMLFile(file);
-	const { updated, imports } = await update(importmap.imports);
+	if (typeof file === 'string')  {
+		return await updateJSON(getFileURL(file));
+	} else if (file instanceof URL && file.protocol === 'file:') {
+		const importmap = await readYAMLFile(file);
+		const { updated, imports } = await update(importmap.imports);
 
-	if (updated) {
-		await writeYAMLFile(file, {  ...importmap, imports: { ...importmap.imports, ...imports }});
-		return true;
+		if (updated) {
+			await writeYAMLFile(file, {  ...importmap, imports: { ...importmap.imports, ...imports }});
+			return true;
+		} else {
+			return false;
+		}
 	} else {
-		return false;
+		throw new TypeError('File must be a path or file: URL.');
 	}
+
 }
 
 export async function updateJSON(file) {
-	const importmap = await readJSONFile(file);
-	const { updated, imports } = await update(importmap.imports);
+	if (typeof file === 'string')  {
+		return await updateJSON(getFileURL(file));
+	} else if (file instanceof URL && file.protocol === 'file:') {
+		const importmap = await readJSONFile(file);
+		const { updated, imports } = await update(importmap.imports);
 
-	if (updated) {
-		await writeJSONFile(file, {  ...importmap, imports: { ...importmap.imports, ...imports }});
-		return true;
+		if (updated) {
+			await writeJSONFile(file, {  ...importmap, imports: { ...importmap.imports, ...imports }});
+			return true;
+		} else {
+			return false;
+		}
 	} else {
-		return false;
+		throw new TypeError('File must be a path or file: URL.');
 	}
 }
