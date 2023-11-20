@@ -1,13 +1,13 @@
 {
   "imports": {
-    "@shgysk8zer0/kazoo/": "https://unpkg.com/@shgysk8zer0/kazoo@0.2.5/",
+    "@shgysk8zer0/kazoo/": "https://unpkg.com/@shgysk8zer0/kazoo@0.2.7/",
     "@shgysk8zer0/konami": "https://unpkg.com/@shgysk8zer0/konami@1.1.1/konami.js",
     "@shgysk8zer0/polyfills": "https://unpkg.com/@shgysk8zer0/polyfills@0.2.6/all.min.js",
     "@shgysk8zer0/polyfills/": "https://unpkg.com/@shgysk8zer0/polyfills@0.2.6/",
     "@shgysk8zer0/jswaggersheets": "https://unpkg.com/@shgysk8zer0/jswaggersheets@1.1.0/swagger.js",
     "@shgysk8zer0/jswaggersheets/": "https://unpkg.com/@shgysk8zer0/jswaggersheets@1.1.0/",
     "@shgysk8zer0/jss/": "https://unpkg.com/@shgysk8zer0/jss@1.0.1/",
-    "@shgysk8zer0/consts/": "https://unpkg.com/@shgysk8zer0/consts@1.0.7/",
+    "@shgysk8zer0/consts/": "https://unpkg.com/@shgysk8zer0/consts@1.0.8/",
     "@shgysk8zer0/http/": "https://unpkg.com/@shgysk8zer0/http@1.0.5/",
     "@shgysk8zer0/http-status": "https://unpkg.com/@shgysk8zer0/http-status@1.1.1/http-status.js",
     "@shgysk8zer0/components/": "https://unpkg.com/@shgysk8zer0/components@0.1.5/",
@@ -17,8 +17,8 @@
     "urlpattern-polyfill": "https://unpkg.com/urlpattern-polyfill@9.0.0/index.js",
     "highlight.js": "https://unpkg.com/@highlightjs/cdn-assets@11.9.0/es/highlight.min.js",
     "highlight.js/": "https://unpkg.com/@highlightjs/cdn-assets@11.9.0/",
-    "marked": "https://unpkg.com/marked@9.1.4/lib/marked.esm.js",
-    "marked-highlight": "https://unpkg.com/marked-highlight@2.0.6/src/index.js",
+    "marked": "https://unpkg.com/marked@10.0.0/lib/marked.esm.js",
+    "marked-highlight": "https://unpkg.com/marked-highlight@2.0.7/src/index.js",
     "firebase/": "https://www.gstatic.com/firebasejs/9.23.0/"
   },
   "scope": {}
