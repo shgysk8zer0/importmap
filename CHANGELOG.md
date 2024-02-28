@@ -6,6 +6,12 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [v1.3.3] - 2024-02-28
+
+### Added
+- Add `@aeggisjsproject/*`
+- Add method to auto-update unpkg entries
+
 ## [v1.3.2] - 2023-11-26
 
 ### Changed

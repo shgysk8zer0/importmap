@@ -9,6 +9,6 @@ export default {
 		file: 'index.cjs',
 		format: 'cjs'
 	}],
-	external: ['node:fs/promises', 'node:crypto', '@shgysk8zer0/npm-utils/yaml.js', '@shgysk8zer0/npm-utils/json.js'],
+	external: ['node:fs/promises', 'node:crypto', '@shgysk8zer0/npm-utils/yaml.js', '@shgysk8zer0/npm-utils/json.js', '@shgysk8zer0/npm-utils/path.js'],
 	plugins: [json({ preferConst: true })],
 };
