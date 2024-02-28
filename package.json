@@ -68,6 +68,6 @@
   },
   "dependencies": {
     "@shgysk8zer0/npm-utils": "^1.1.2",
-    "commander": "^11.1.0"
+    "commander": "^12.0.0"
   }
 }
