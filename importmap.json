@@ -1,6 +1,6 @@
 {
   "imports": {
-    "@shgysk8zer0/kazoo/": "https://unpkg.com/@shgysk8zer0/kazoo@0.3.2/",
+    "@shgysk8zer0/kazoo/": "https://unpkg.com/@shgysk8zer0/kazoo@0.3.4/",
     "@shgysk8zer0/konami": "https://unpkg.com/@shgysk8zer0/konami@1.1.1/konami.js",
     "@shgysk8zer0/polyfills": "https://unpkg.com/@shgysk8zer0/polyfills@0.3.2/all.min.js",
     "@shgysk8zer0/polyfills/": "https://unpkg.com/@shgysk8zer0/polyfills@0.3.2/",
@@ -10,8 +10,8 @@
     "@shgysk8zer0/consts/": "https://unpkg.com/@shgysk8zer0/consts@1.0.8/",
     "@shgysk8zer0/http/": "https://unpkg.com/@shgysk8zer0/http@1.0.5/",
     "@shgysk8zer0/http-status": "https://unpkg.com/@shgysk8zer0/http-status@1.1.1/http-status.js",
-    "@aegisjsproject/core": "https://unpkg.com/@aegisjsproject/core@0.1.5/core.js",
-    "@aegisjsproject/core/": "https://unpkg.com/@aegisjsproject/core@0.1.5/",
+    "@aegisjsproject/core": "https://unpkg.com/@aegisjsproject/core@0.1.6/core.js",
+    "@aegisjsproject/core/": "https://unpkg.com/@aegisjsproject/core@0.1.6/",
     "@aegisjsproject/styles": "https://unpkg.com/@aegisjsproject/styles@0.1.1/styles.js",
     "@aegisjsproject/styles/": "https://unpkg.com/@aegisjsproject/styles@0.1.1/",
     "@aegisjsproject/component": "https://unpkg.com/@aegisjsproject/component@0.1.2/component.js",
