@@ -49,8 +49,10 @@ jobs:
           title: 'Update importmap.json'
           branch: patch/update-importmap
           branch-suffix: short-commit-hash
+          token: ${{ secrets.GH_PR_TOKEN }}
+          author: ${{ github.actor }} <${{ github.actor_id }}+${{ github.actor }}@users.noreply.github.com>
           add-paths: importmap.json
           signoff: true
-          delete-branch: true
+          # delete-branch: true
           reviewers: shgysk8zer0
           assignees: shgysk8zer0
