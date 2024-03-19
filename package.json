@@ -59,7 +59,7 @@
   },
   "homepage": "https://github.com/shgysk8zer0/importmap#readme",
   "devDependencies": {
-    "@babel/eslint-parser": "^7.23.10",
+    "@babel/eslint-parser": "^7.24.1",
     "@babel/eslint-plugin": "^7.23.5",
     "@babel/plugin-syntax-import-assertions": "^7.24.1",
     "@rollup/plugin-json": "^6.1.0",
