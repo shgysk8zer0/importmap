@@ -56,7 +56,7 @@ jobs:
           title: 'Update importmap.json'
           branch: patch/update-importmap
           branch-suffix: short-commit-hash
-          #committer: ${{ github.actor }} <${{ github.actor_id }}+${{ github.actor }}@users.noreply.github.com>
+          committer: ${{ github.actor }} <shgysk8zer0@users.noreply.github.com>
           author: ${{ github.actor }} <shgysk8zer0@users.noreply.github.com>
           add-paths: importmap.json
           signoff: true
