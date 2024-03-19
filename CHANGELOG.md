@@ -6,8 +6,13 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [v1.3.6] - 2024-03-18
+
 ### Added
 - Add GitHub Action to run `npm run update`
+
+### Changed
+- More updates, but automated this time
 
 ## [v1.3.5] - 2024-03-12
 
