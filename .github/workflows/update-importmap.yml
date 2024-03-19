@@ -57,7 +57,7 @@ jobs:
           branch: patch/update-importmap
           branch-suffix: short-commit-hash
           committer: ${{ github.actor }} <${{ github.actor_id }}+${{ github.actor }}@users.noreply.github.com>
-          author: shgysk8zer0@users.noreply.github.com
+          author: ${{ github.actor }} <1627459+shgysk8zer0@users.noreply.github.com>
           add-paths: importmap.json
           signoff: true
           token: ${{ secrets.PR_TOKEN }}
