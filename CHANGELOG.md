@@ -6,6 +6,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+### Added
+- Add GitHub Action to run `npm run update`
+
 ## [v1.3.5] - 2024-03-12
 
 ### Changed

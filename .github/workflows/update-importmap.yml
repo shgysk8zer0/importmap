@@ -61,5 +61,5 @@ jobs:
           signoff: true
           token: ${{ secrets.PR_TOKEN }}
           # delete-branch: true
-          reviewers: shgysk8zer0
+          # reviewers: shgysk8zer0
           assignees: shgysk8zer0
