@@ -1,11 +1,9 @@
 import { writeFile } from 'node:fs/promises';
-import { createHash } from 'node:crypto';
 import importmap from './importmap.json' with { type: 'json' };
+import { sri, DEFAULT_ALGO } from './hash.js';
 
 export const { imports, scope } = importmap;
-
 export const ENCODING = 'utf8';
-export const ALGO = 'sha384';
 export { importmap };
 export * as unpkg from './unpkg.js';
 
@@ -24,22 +22,17 @@ export async function createImportmapJSON(path = 'importmap.json', {
 	await writeFile(path, JSON.stringify(importmap, null, spaces), { encoding: ENCODING, signal });
 }
 
-export function getImportmapIntegrity({
+export async function getImportmapIntegrity({
 	importmap = { imports, scope },
-	algo = ALGO,
-	encoding = ENCODING,
-	spaces = 2,
+	algo = DEFAULT_ALGO,
 } = {}) {
-	const hash = createHash(algo);
-	hash.update(JSON.stringify(importmap, null, spaces), encoding);
-	return `${algo}-${hash.digest('base64')}`;
+	return await sri(JSON.stringify(importmap), { algo });
 }
 
-export function getImportMapScript({
+export async function getImportmapScript({
 	importmap = { imports, scope },
-	algo = ALGO,
-	spaces = 2,
+	algo = DEFAULT_ALGO,
 } = {}) {
-	const integrity = getImportmapIntegrity({ importmap, algo, spaces });
-	return `<script type="importmap" integrity="${integrity}">${JSON.stringify(importmap, null, spaces)}</script>`;
+	const integrity = await getImportmapIntegrity({ importmap, algo });
+	return `<script type="importmap" integrity="${integrity}">${JSON.stringify(importmap)}</script>`;
 }
