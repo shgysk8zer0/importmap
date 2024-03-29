@@ -10,6 +10,8 @@
     "@shgysk8zer0/consts/": "https://unpkg.com/@shgysk8zer0/consts@1.0.8/",
     "@shgysk8zer0/http/": "https://unpkg.com/@shgysk8zer0/http@1.0.5/",
     "@shgysk8zer0/http-status": "https://unpkg.com/@shgysk8zer0/http-status@1.1.1/http-status.js",
+    "@aegisjsproject/parsers": "https://unpkg.com/@aegisjsproject/parsers@v0.0.2/bundle.min.js",
+    "@aegisjsproject/parsers/": "https://unpkg.com/@aegisjsproject/parsers@v0.0.2/",
     "@aegisjsproject/sanitizer": "https://unpkg.com/@aegisjsproject/sanitizer@0.0.5/sanitizer.js",
     "@aegisjsproject/sanitizer/": "https://unpkg.com/@aegisjsproject/sanitizer@0.0.5/",
     "@aegisjsproject/core": "https://unpkg.com/@aegisjsproject/core@0.2.2/core.js",
