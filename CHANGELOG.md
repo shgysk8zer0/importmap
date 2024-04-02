@@ -6,6 +6,14 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [v1.3.10] - 2024-04-01
+
+### Added
+- Add `@aegisjsproject/trusted-types`
+
+### Changed
+- Update package versions
+
 ## [v1.3.9] - 2024-03-28
 
 ### Added
