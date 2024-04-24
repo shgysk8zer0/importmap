@@ -6,6 +6,11 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [v1.4.0] - 2024-04-24
+
+### Added
+- Add `yaml` package
+
 ## [v1.3.15] - 2024-04-16
 
 ### Changed
