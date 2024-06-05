@@ -61,7 +61,7 @@
   "devDependencies": {
     "@babel/eslint-parser": "^7.24.7",
     "@babel/eslint-plugin": "^7.24.7",
-    "@babel/plugin-syntax-import-assertions": "^7.24.6",
+    "@babel/plugin-syntax-import-assertions": "^7.24.7",
     "@rollup/plugin-json": "^6.1.0",
     "@shgysk8zer0/js-utils": "^1.0.1",
     "@shgysk8zer0/rollup-import": "^1.2.2"
