@@ -1,6 +1,6 @@
 {
   "imports": {
-    "@shgysk8zer0/kazoo/": "https://unpkg.com/@shgysk8zer0/kazoo@1.0.5/",
+    "@shgysk8zer0/kazoo/": "https://unpkg.com/@shgysk8zer0/kazoo@1.0.6/",
     "@shgysk8zer0/konami": "https://unpkg.com/@shgysk8zer0/konami@1.1.1/konami.js",
     "@shgysk8zer0/polyfills": "https://unpkg.com/@shgysk8zer0/polyfills@0.3.10/all.min.js",
     "@shgysk8zer0/polyfills/": "https://unpkg.com/@shgysk8zer0/polyfills@0.3.10/",
@@ -26,7 +26,7 @@
     "@aegisjsproject/markdown/": "https://unpkg.com/@aegisjsproject/markdown@0.1.2/",
     "@aegisjsproject/aegis-md": "https://unpkg.com/@aegisjsproject/aegis-md@0.0.2/aegis-md.js",
     "@aegisjsproject/aegis-md/": "https://unpkg.com/@aegisjsproject/aegis-md@0.0.2/",
-    "@shgysk8zer0/components/": "https://unpkg.com/@shgysk8zer0/components@0.3.1/",
+    "@shgysk8zer0/components/": "https://unpkg.com/@shgysk8zer0/components@0.3.4/",
     "@kernvalley/components/": "https://unpkg.com/@kernvalley/components@2.0.5/",
     "@webcomponents/custom-elements": "https://unpkg.com/@webcomponents/custom-elements@1.6.0/custom-elements.min.js",
     "leaflet": "https://unpkg.com/leaflet@1.9.4/dist/leaflet-src.esm.js",
@@ -35,7 +35,7 @@
     "highlight.js/": "https://unpkg.com/@highlightjs/cdn-assets@11.9.0/es/",
     "@highlightjs/cdn-assets": "https://unpkg.com/@highlightjs/cdn-assets@11.9.0/es/core.min.js",
     "@highlightjs/cdn-assets/": "https://unpkg.com/@highlightjs/cdn-assets@11.9.0/es/",
-    "marked": "https://unpkg.com/marked@13.0.0/lib/marked.esm.js",
+    "marked": "https://unpkg.com/marked@13.0.1/lib/marked.esm.js",
     "marked-highlight": "https://unpkg.com/marked-highlight@2.1.3/src/index.js",
     "yaml": "https://unpkg.com/yaml@2.4.5/browser/dist/index.js",
     "yaml/": "https://unpkg.com/yaml@2.4.5/browser/dist/",
