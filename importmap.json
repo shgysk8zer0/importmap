@@ -37,8 +37,8 @@
     "@highlightjs/cdn-assets/": "https://unpkg.com/@highlightjs/cdn-assets@11.10.0/es/",
     "marked": "https://unpkg.com/marked@13.0.2/lib/marked.esm.js",
     "marked-highlight": "https://unpkg.com/marked-highlight@2.1.3/src/index.js",
-    "yaml": "https://unpkg.com/yaml@2.4.5/browser/dist/index.js",
-    "yaml/": "https://unpkg.com/yaml@2.4.5/browser/dist/",
+    "yaml": "https://unpkg.com/yaml@2.5.0/browser/dist/index.js",
+    "yaml/": "https://unpkg.com/yaml@2.5.0/browser/dist/",
     "firebase/": "https://www.gstatic.com/firebasejs/9.23.0/"
   },
   "scope": {}
