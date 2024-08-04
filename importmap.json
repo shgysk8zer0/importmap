@@ -39,7 +39,18 @@
     "marked-highlight": "https://unpkg.com/marked-highlight@2.1.3/src/index.js",
     "yaml": "https://unpkg.com/yaml@2.5.0/browser/dist/index.js",
     "yaml/": "https://unpkg.com/yaml@2.5.0/browser/dist/",
-    "firebase/": "https://www.gstatic.com/firebasejs/9.23.0/"
+    "firebase/": "https://www.gstatic.com/firebasejs/10.12.1/",
+    "firebase/app": "https://www.gstatic.com/firebasejs/10.12.1/firebase-app.js",
+    "firebase/app-check": "https://www.gstatic.com/firebasejs/10.12.1/firebase-app-check.js",
+    "firebase/auth": "https://www.gstatic.com/firebasejs/10.12.1/firebase-auth.js",
+    "firebase/database": "https://www.gstatic.com/firebasejs/10.12.1/firebase-database.js",
+    "firebase/firestore": "https://www.gstatic.com/firebasejs/10.12.1/firebase-firestore.js",
+    "firebase/functions": "https://www.gstatic.com/firebasejs/10.12.1/firebase-functions.js",
+    "firebase/messaging": "https://www.gstatic.com/firebasejs/10.12.1/firebase-messaging.js",
+    "firebase/performance": "https://www.gstatic.com/firebasejs/10.12.1/firebase-performance.js",
+    "firebase/remote-config": "https://www.gstatic.com/firebasejs/10.12.1/firebase-remote-config.js",
+    "firebase/storage": "https://www.gstatic.com/firebasejs/10.12.1/firebase-storage.js",
+    "firebase/analytics": "https://www.gstatic.com/firebasejs/10.12.1/firebase-analytics.js"
   },
   "scope": {}
 }

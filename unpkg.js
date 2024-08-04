@@ -23,6 +23,10 @@ export async function update(imports) {
 	return { imports: Object.fromEntries(entries), updated };
 }
 
+export async function updateUnpkg(imports) {
+	return update(imports);
+}
+
 export async function updateYAML(file) {
 	if (typeof file === 'string')  {
 		return await updateJSON(getFileURL(file));
