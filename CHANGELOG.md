@@ -6,6 +6,14 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [v1.4.2] - 2024-08-04
+
+### Added
+- Add specifiers for `firebase/*`
+
+### Changed
+- More version updates
+
 ## [v1.4.1] - 2024-07-14
 
 ### Changed
