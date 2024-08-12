@@ -26,7 +26,7 @@
     "@aegisjsproject/markdown/": "https://unpkg.com/@aegisjsproject/markdown@0.1.2/",
     "@aegisjsproject/aegis-md": "https://unpkg.com/@aegisjsproject/aegis-md@0.0.2/aegis-md.js",
     "@aegisjsproject/aegis-md/": "https://unpkg.com/@aegisjsproject/aegis-md@0.0.2/",
-    "@shgysk8zer0/components/": "https://unpkg.com/@shgysk8zer0/components@0.3.10/",
+    "@shgysk8zer0/components/": "https://unpkg.com/@shgysk8zer0/components@0.3.11/",
     "@kernvalley/components/": "https://unpkg.com/@kernvalley/components@2.0.5/",
     "@webcomponents/custom-elements": "https://unpkg.com/@webcomponents/custom-elements@1.6.0/custom-elements.min.js",
     "leaflet": "https://unpkg.com/leaflet@1.9.4/dist/leaflet-src.esm.js",
