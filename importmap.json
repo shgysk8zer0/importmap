@@ -2,8 +2,8 @@
   "imports": {
     "@shgysk8zer0/kazoo/": "https://unpkg.com/@shgysk8zer0/kazoo@1.0.7/",
     "@shgysk8zer0/konami": "https://unpkg.com/@shgysk8zer0/konami@1.1.1/konami.js",
-    "@shgysk8zer0/polyfills": "https://unpkg.com/@shgysk8zer0/polyfills@0.3.14/all.min.js",
-    "@shgysk8zer0/polyfills/": "https://unpkg.com/@shgysk8zer0/polyfills@0.3.14/",
+    "@shgysk8zer0/polyfills": "https://unpkg.com/@shgysk8zer0/polyfills@0.4.0/all.min.js",
+    "@shgysk8zer0/polyfills/": "https://unpkg.com/@shgysk8zer0/polyfills@0.4.0/",
     "@shgysk8zer0/jswaggersheets": "https://unpkg.com/@shgysk8zer0/jswaggersheets@1.1.0/swagger.js",
     "@shgysk8zer0/jswaggersheets/": "https://unpkg.com/@shgysk8zer0/jswaggersheets@1.1.0/",
     "@shgysk8zer0/jss/": "https://unpkg.com/@shgysk8zer0/jss@1.0.1/",
