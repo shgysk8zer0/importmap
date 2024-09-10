@@ -15,6 +15,10 @@ import { status } from '@shgysk8zer0/http-status';
 import { konami } from '@shgysk8zer0/konami';
 import { ready } from '@shgysk8zer0/kazoo/dom.js';
 import { createSheet } from '@shgysk8zer0/jswaggersheets';
+import { generateJWK } from '@shgysk8zer0/jwk-utils';
+import { createJWT } from '@shgysk8zer0/jwk-utils/jwt.js';
+
+generateJWK().then(({ privateKey }) => createJWT({ iss: 'test' }, privateKey )).then(console.log);
 
 console.log(STATUS, HTTPError);
 
