@@ -6,6 +6,14 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [v1.4.5] - 2024-09-10
+
+### Added
+- Add `@shgysk8zer0/jwk-utils`
+
+### Changed
+- Various package version updates
+
 ## [v1.4.4] - 2024-08-13
 
 ### Changed
