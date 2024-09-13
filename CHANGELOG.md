@@ -6,6 +6,11 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [v1.4.7] - 2024-09-13
+
+### Changed
+- Update `@shgysk8zer0/jwk-utils` and `@shgysk8zer0/polyfills`
+
 ## [v1.4.6] - 2024-09-10
 
 ### Changed
