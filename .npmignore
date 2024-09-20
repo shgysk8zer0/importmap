@@ -3,5 +3,6 @@
 index.js
 .eslint*
 *.config.js
+*.test.js
 .nvmrc
 test/
