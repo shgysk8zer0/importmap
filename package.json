@@ -1,31 +1,31 @@
 {
   "name": "@shgysk8zer0/importmap",
-  "version": "1.4.8",
+  "version": "1.4.9",
   "engines": {
     "node": ">=18.0.0"
   },
   "description": "Front-End dependencies based on `<script type=\"importmap\">`",
   "type": "module",
-  "module": "./index.mjs",
+  "module": "./index.js",
   "main": "./index.cjs",
-  "unpkg": "./index.mjs",
+  "unpkg": "./index.js",
   "exports": {
     ".": {
-      "import": "./index.mjs",
+      "import": "./index.js",
       "require": "./index.cjs"
     },
     "./*.js": {
-      "import": "./*.mjs",
+      "import": "./*.js",
       "require": "./*.cjs"
     },
     "./*.mjs": {
-      "import": "./*.mjs"
+      "import": "./*.js"
     },
     "./*.cjs": {
       "require": "./*.cjs"
     },
     "./*": {
-      "import": "./*.mjs",
+      "import": "./*.js",
       "require": "./*.cjs"
     }
   },
@@ -33,11 +33,11 @@
     "importmap-utils": "./cli.mjs"
   },
   "scripts": {
-    "test": "npm run lint:js && npm run build && npm run test:imports",
-    "preversion": "npm test",
-    "prepare": "npm run build",
+    "test": "npm run lint:js && npm run test:imports",
+    "preversion": "npm test && npm run build",
+    "prepare": "npm test && npm run build",
     "update": "node ./update.js",
-    "lint:js": "eslint .",
+    "lint:js": "eslint . --ignore-pattern 'importmap.mjs'",
     "fix:js": "eslint . --fix",
     "build": "npm run build:js",
     "build:js": "rollup -c",
@@ -59,10 +59,8 @@
   },
   "homepage": "https://github.com/shgysk8zer0/importmap#readme",
   "devDependencies": {
-    "@babel/eslint-parser": "^7.25.1",
-    "@babel/eslint-plugin": "^7.25.1",
-    "@babel/plugin-syntax-import-assertions": "^7.25.6",
     "@rollup/plugin-json": "^6.1.0",
+    "@shgysk8zer0/eslint-config": "^1.0.1",
     "@shgysk8zer0/js-utils": "^1.0.2",
     "@shgysk8zer0/rollup-import": "^1.2.4"
   },

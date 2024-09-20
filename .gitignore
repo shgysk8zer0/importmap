@@ -1,6 +1,8 @@
 *.cjs
+cli.js
+index.js
+importmap.js
 *.min.*
-index.mjs
 *.map
 # Logs
 logs

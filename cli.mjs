@@ -1,12 +1,12 @@
 #!/usr/bin/env node
 /* eslint-env node */
 
-import { readJSONFile, writeJSONFile } from '@shgysk8zer0/npm-utils/json';
-import { readYAMLFile, writeYAMLFile } from '@shgysk8zer0/npm-utils/yaml';
+import { readJSONFile, writeJSONFile } from '@shgysk8zer0/npm-utils/json.js';
+import { readYAMLFile, writeYAMLFile } from '@shgysk8zer0/npm-utils/yaml.js';
 import { program } from 'commander';
 import { extname } from 'node:path';
 import { importmap } from './index.mjs';
-import { updateImportMap } from './html.js';
+// import { updateImportMap } from './html.js';
 
 function guessFileType(file) {
 	const ext = extname(file).toLowerCase();
@@ -77,8 +77,8 @@ init().then(async ({ opts: { input, encoding, format, output }}) => {
 			await writeYAMLFile(output, mod, { encoding });
 			break;
 
-		case 'html':
-			await updateImportMap(output, { spaces: null });
-			break;
+	// 	case 'html':
+	// 		await updateImportMap(output, { spaces: null });
+	// 		break;
 	}
 });
