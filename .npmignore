@@ -1,6 +1,6 @@
 .github/
 .editorconfig
-index.js
+*.mjs
 .eslint*
 *.config.js
 *.test.js
