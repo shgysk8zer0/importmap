@@ -62,7 +62,7 @@
     "@rollup/plugin-json": "^6.1.0",
     "@shgysk8zer0/eslint-config": "^1.0.1",
     "@shgysk8zer0/js-utils": "^1.0.2",
-    "@shgysk8zer0/rollup-import": "^1.2.4"
+    "@shgysk8zer0/rollup-import": "^1.2.5"
   },
   "dependencies": {
     "@shgysk8zer0/npm-utils": "^1.1.3",
