@@ -11,6 +11,8 @@ import 'firebase/auth';
 import 'firebase/firestore';
 import 'firebase/storage';
 import 'firebase/messaging';
+import { navigate } from '@aegisjsproject/router';
+import { manageState } from '@aegisjsproject/state';
 import { status } from '@shgysk8zer0/http-status';
 import { konami } from '@shgysk8zer0/konami';
 import { ready } from '@shgysk8zer0/kazoo/dom.js';
@@ -20,7 +22,10 @@ import { createJWT } from '@shgysk8zer0/jwk-utils/jwt.js';
 
 /* global customElements document */
 
-generateJWK().then(({ privateKey }) => createJWT({ iss: 'test' }, privateKey )).then(console.log);
+const [jwk, setJWK] = manageState('jwk');
+generateJWK().then(({ privateKey }) => createJWT({ iss: 'test' }, privateKey )).then(setJWK).then(console.log(jwk));
+
+navigate(location.href);
 
 console.log(STATUS, HTTPError);
 
