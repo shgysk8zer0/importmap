@@ -7,6 +7,14 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [v1.4.16] - 2024-10-26
+
+### Added
+- Add integration of `@aegisjsproject/state` and `@aegisjsproject/router`
+
+### Changed
+- Update `@shgysk8zer0/polyfills` and `@aegisjsproject/component`
+
 ## [v1.4.15] - 2024-10-08
 
 ### Changed
