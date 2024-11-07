@@ -7,7 +7,12 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
-## [v1.4.18= - 2024-11-06
+## [v1.4.19] - 2024-11-06
+
+### Changed
+- Update `@shgysk8zer0/polyfills` with updates to `@aegisjsproject/sanitizer`
+
+## [v1.4.18] - 2024-11-06
 
 ### Changed
 - Update depenedency versions with better inter-compatibility
