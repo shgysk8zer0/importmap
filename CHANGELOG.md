@@ -7,6 +7,14 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [v1.4.23] - 2024-11-17
+
+### Added
+- Add `@aegisjsproject/callback-registry`
+
+### Changed
+- Update `@aegisjsproject/core` (now uses callback-registry)
+
 ## [v1.4.22] - 2024-11-14
 
 ### Changed
