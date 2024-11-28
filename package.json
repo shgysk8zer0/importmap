@@ -60,7 +60,7 @@
   "homepage": "https://github.com/shgysk8zer0/importmap#readme",
   "devDependencies": {
     "@rollup/plugin-json": "^6.1.0",
-    "@shgysk8zer0/eslint-config": "^1.0.1",
+    "@shgysk8zer0/eslint-config": "^1.0.3",
     "@shgysk8zer0/js-utils": "^1.0.2",
     "@shgysk8zer0/rollup-import": "^1.2.5"
   },
