@@ -7,6 +7,11 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [v1.4.s8] - 2024-11-28
+
+### Changed
+= Update `@agisjsproject.state`
+
 ## [v1.4.27] - 2024-11-27
 
 ### Changed
