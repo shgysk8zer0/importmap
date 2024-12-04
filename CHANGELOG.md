@@ -7,6 +7,12 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [v1.4.29] - 2024-12-04
+
+### Changed
+- Update `@aegisjsproject/router`
+- Use correct script for polyfills
+
 ## [v1.4.28] - 2024-11-28
 
 ### Changed
