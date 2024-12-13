@@ -7,6 +7,11 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+### [v1.4.30] - 2024-12-13
+
+### Added
+- Add `@shgysk8zer0/aes-gcm`
+
 ## [v1.4.29] - 2024-12-04
 
 ### Changed

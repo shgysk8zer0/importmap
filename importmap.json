@@ -12,6 +12,8 @@
     "@shgysk8zer0/consts/": "https://unpkg.com/@shgysk8zer0/consts@1.0.8/",
     "@shgysk8zer0/http/": "https://unpkg.com/@shgysk8zer0/http@1.0.5/",
     "@shgysk8zer0/http-status": "https://unpkg.com/@shgysk8zer0/http-status@1.1.2/http-status.js",
+    "@shgysk8zer0/aes-gcm": "https://unpkg.com/@shgysk8zer0/aes-gcm@1.0.2/aes-gcm.min.js",
+    "@shgysk8zer0/aes-gcm/": "https://unpkg.com/@shgysk8zer0/aes-gcm@1.0.2/",
     "@aegisjsproject/trusted-types": "https://unpkg.com/@aegisjsproject/trusted-types@1.0.2/bundle.min.js",
     "@aegisjsproject/trusted-types/": "https://unpkg.com/@aegisjsproject/trusted-types@1.0.2/",
     "@aegisjsproject/parsers": "https://unpkg.com/@aegisjsproject/parsers@0.0.16/bundle.min.js",
