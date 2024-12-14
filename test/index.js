@@ -20,12 +20,13 @@ import { createSheet } from '@shgysk8zer0/jswaggersheets';
 import { generateJWK } from '@shgysk8zer0/jwk-utils';
 import { createJWT } from '@shgysk8zer0/jwk-utils/jwt.js';
 import { encrypt, generateSecretKey } from '@shgysk8zer0/aes-gcm';
+import { getSUID } from '@shgysk8zer0/suid';
 
 /* global customElements document */
 
 const [jwk, setJWK] = manageState('jwk');
 
-generateSecretKey().then(key => encrypt(key, 'Hello, World', { output: 'base64' })).then(console.log);
+generateSecretKey().then(key => encrypt(key, getSUID(), { output: 'base64' })).then(console.log);
 generateJWK().then(({ privateKey }) => createJWT({ iss: 'test' }, privateKey )).then(setJWK).then(console.log(jwk));
 
 navigate(location.href);
