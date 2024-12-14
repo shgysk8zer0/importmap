@@ -7,7 +7,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
-### [v1.5.31] - 2024-12-13
+### [v1.4.31] - 2024-12-13
 
 ### Added
 - Add `@shgysk8zer0/suid`
