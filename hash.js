@@ -1,3 +1,5 @@
+import '@shgysk8zer0/polyfills';
+
 export const SHA1 = 'SHA-1';
 export const SHA256 = 'SHA-256';
 export const SHA384 = 'SHA-384';
@@ -6,32 +8,30 @@ export const DEFAULT_ALGO = SHA384;
 export const SHA = SHA1;
 
 export const BASE64 = 'base64';
+export const BASE64_URL = 'base64url';
 export const SRI = 'sri';
 export const HEX = 'hex';
 export const BUFFER = 'buffer';
 
 export async function hash(data, { algo = DEFAULT_ALGO, output = BUFFER } = {}) {
-	const buffer = await new TextEncoder().encode(data);
-	const hash = await crypto.subtle.digest(algo, buffer);
+	const bytes = new TextEncoder().encode(data);
+	const hash = await crypto.subtle.digest(algo, bytes);
 
 	switch (output) {
 		case BUFFER:
 			return hash;
 
 		case HEX:
-			return Array.from(
-				new Uint8Array(hash),
-				byte => byte.toString(16).padStart(2, '0')
-			).join('');
+			return new Uint8Array(hash).toHex();
 
 		case BASE64:
-			return btoa(hash);
+			return new Uint8Array(hash).toBase64({ alphabet: BASE64 });
+
+		case BASE64_URL:
+			return new Uint8Array(hash).toBase64({ alphabet: BASE64_URL });
 
 		case SRI: {
-			const codeUnits = new Uint16Array(hash);
-			const charCodes = new Uint8Array(codeUnits.buffer);
-			const result = btoa(String.fromCharCode(...charCodes));
-			return `${algo.replace('-', '').toLowerCase()}-${result}`;
+			return `${algo.replace('-', '').toLowerCase()}-${new Uint8Array(hash).toBase64({ alphabet: BASE64 })}`;
 		}
 
 		default:

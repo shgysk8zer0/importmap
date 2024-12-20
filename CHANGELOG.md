@@ -7,7 +7,17 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
-### [v1.4.31] - 2024-12-13
+## [v1.4.32] - 2024-12-19
+
+### Added
+- Add `@shgysk8zer0/geoutils`
+- Add basic tests for hashing
+
+### Changed
+- Update `hash()` to now use new `Uint8Array` methods
+- Use `@shgysk8zer0/polyfills` as an external dependency
+
+## [v1.4.31] - 2024-12-13
 
 ### Added
 - Add `@shgysk8zer0/suid`
