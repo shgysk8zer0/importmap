@@ -1,4 +1,5 @@
 import { writeFile } from 'node:fs/promises';
+import '@shgysk8zer0/polyfills';
 import { readYAMLFile, writeYAMLFile } from '@shgysk8zer0/npm-utils/yaml.js';
 import { readJSONFile, writeJSONFile } from '@shgysk8zer0/npm-utils/json.js';
 import { getFileURL } from '@shgysk8zer0/npm-utils/path.js';
@@ -8,18 +9,20 @@ const imports$1 = {
 	"@shgysk8zer0/konami": "https://unpkg.com/@shgysk8zer0/konami@1.1.1/konami.js",
 	"@shgysk8zer0/polyfills": "https://unpkg.com/@shgysk8zer0/polyfills@0.4.7/browser.min.js",
 	"@shgysk8zer0/polyfills/": "https://unpkg.com/@shgysk8zer0/polyfills@0.4.7/",
-	"@shgysk8zer0/jwk-utils": "https://unpkg.com/@shgysk8zer0/jwk-utils@1.0.17/jwk-utils.min.js",
-	"@shgysk8zer0/jwk-utils/": "https://unpkg.com/@shgysk8zer0/jwk-utils@1.0.17/",
+	"@shgysk8zer0/jwk-utils": "https://unpkg.com/@shgysk8zer0/jwk-utils@1.0.18/jwk-utils.min.js",
+	"@shgysk8zer0/jwk-utils/": "https://unpkg.com/@shgysk8zer0/jwk-utils@1.0.18/",
 	"@shgysk8zer0/jswaggersheets": "https://unpkg.com/@shgysk8zer0/jswaggersheets@1.1.0/swagger.js",
 	"@shgysk8zer0/jswaggersheets/": "https://unpkg.com/@shgysk8zer0/jswaggersheets@1.1.0/",
 	"@shgysk8zer0/jss/": "https://unpkg.com/@shgysk8zer0/jss@1.0.1/",
 	"@shgysk8zer0/consts/": "https://unpkg.com/@shgysk8zer0/consts@1.0.8/",
 	"@shgysk8zer0/http/": "https://unpkg.com/@shgysk8zer0/http@1.0.5/",
 	"@shgysk8zer0/http-status": "https://unpkg.com/@shgysk8zer0/http-status@1.1.2/http-status.js",
-	"@shgysk8zer0/aes-gcm": "https://unpkg.com/@shgysk8zer0/aes-gcm@1.0.2/aes-gcm.min.js",
-	"@shgysk8zer0/aes-gcm/": "https://unpkg.com/@shgysk8zer0/aes-gcm@1.0.2/",
+	"@shgysk8zer0/aes-gcm": "https://unpkg.com/@shgysk8zer0/aes-gcm@1.0.5/aes-gcm.min.js",
+	"@shgysk8zer0/aes-gcm/": "https://unpkg.com/@shgysk8zer0/aes-gcm@1.0.5/",
 	"@shgysk8zer0/suid": "https://unpkg.com/@shgysk8zer0/suid@1.0.0/suid.min.js",
 	"@shgysk8zer0/suid/": "https://unpkg.com/@shgysk8zer0/suid@1.0.0/",
+	"@shgysk8zer0/geoutils": "https://unpkg.com/@shgysk8zer0/geoutils@1.0.0/geoutils.min.js",
+	"@shgysk8zer0/geoutils/": "https://unpkg.com/@shgysk8zer0/geoutils@1.0.0/",
 	"@aegisjsproject/trusted-types": "https://unpkg.com/@aegisjsproject/trusted-types@1.0.2/bundle.min.js",
 	"@aegisjsproject/trusted-types/": "https://unpkg.com/@aegisjsproject/trusted-types@1.0.2/",
 	"@aegisjsproject/parsers": "https://unpkg.com/@aegisjsproject/parsers@0.0.16/bundle.min.js",
@@ -49,11 +52,11 @@ const imports$1 = {
 	"@webcomponents/custom-elements": "https://unpkg.com/@webcomponents/custom-elements@1.6.0/custom-elements.min.js",
 	leaflet: "https://unpkg.com/leaflet@1.9.4/dist/leaflet-src.esm.js",
 	"urlpattern-polyfill": "https://unpkg.com/urlpattern-polyfill@10.0.0/index.js",
-	"highlight.js": "https://unpkg.com/@highlightjs/cdn-assets@11.10.0/es/core.min.js",
-	"highlight.js/": "https://unpkg.com/@highlightjs/cdn-assets@11.10.0/es/",
-	"@highlightjs/cdn-assets": "https://unpkg.com/@highlightjs/cdn-assets@11.10.0/es/core.min.js",
-	"@highlightjs/cdn-assets/": "https://unpkg.com/@highlightjs/cdn-assets@11.10.0/es/",
-	marked: "https://unpkg.com/marked@15.0.3/lib/marked.esm.js",
+	"highlight.js": "https://unpkg.com/@highlightjs/cdn-assets@11.11.0/es/core.min.js",
+	"highlight.js/": "https://unpkg.com/@highlightjs/cdn-assets@11.11.0/es/",
+	"@highlightjs/cdn-assets": "https://unpkg.com/@highlightjs/cdn-assets@11.11.0/es/core.min.js",
+	"@highlightjs/cdn-assets/": "https://unpkg.com/@highlightjs/cdn-assets@11.11.0/es/",
+	marked: "https://unpkg.com/marked@15.0.4/lib/marked.esm.js",
 	"marked-highlight": "https://unpkg.com/marked-highlight@2.2.1/src/index.js",
 	yaml: "https://unpkg.com/yaml@2.6.1/browser/dist/index.js",
 	"yaml/": "https://unpkg.com/yaml@2.6.1/browser/dist/",
@@ -83,32 +86,30 @@ const SHA384 = 'SHA-384';
 const DEFAULT_ALGO = SHA384;
 
 const BASE64 = 'base64';
+const BASE64_URL = 'base64url';
 const SRI = 'sri';
 const HEX = 'hex';
 const BUFFER = 'buffer';
 
 async function hash(data, { algo = DEFAULT_ALGO, output = BUFFER } = {}) {
-	const buffer = await new TextEncoder().encode(data);
-	const hash = await crypto.subtle.digest(algo, buffer);
+	const bytes = new TextEncoder().encode(data);
+	const hash = await crypto.subtle.digest(algo, bytes);
 
 	switch (output) {
 		case BUFFER:
 			return hash;
 
 		case HEX:
-			return Array.from(
-				new Uint8Array(hash),
-				byte => byte.toString(16).padStart(2, '0')
-			).join('');
+			return new Uint8Array(hash).toHex();
 
 		case BASE64:
-			return btoa(hash);
+			return new Uint8Array(hash).toBase64({ alphabet: BASE64 });
+
+		case BASE64_URL:
+			return new Uint8Array(hash).toBase64({ alphabet: BASE64_URL });
 
 		case SRI: {
-			const codeUnits = new Uint16Array(hash);
-			const charCodes = new Uint8Array(codeUnits.buffer);
-			const result = btoa(String.fromCharCode(...charCodes));
-			return `${algo.replace('-', '').toLowerCase()}-${result}`;
+			return `${algo.replace('-', '').toLowerCase()}-${new Uint8Array(hash).toBase64({ alphabet: BASE64 })}`;
 		}
 
 		default:
