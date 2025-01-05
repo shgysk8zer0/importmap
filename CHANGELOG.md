@@ -7,6 +7,11 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [v1.4.39] - 2025-01-14
+
+### Added
+- Add `@shgysk8zer0/squish`
+
 ## [v1.4.38] - 2025-01-03
 
 ### Changed
