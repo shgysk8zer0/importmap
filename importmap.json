@@ -38,6 +38,8 @@
     "@aegisjsproject/aegis-md/": "https://unpkg.com/@aegisjsproject/aegis-md@0.0.4/",
     "@aegisjsproject/url": "https://unpkg.com/@aegisjsproject/url@1.0.1/url.mjs",
     "@aegisjsproject/url/": "https://unpkg.com/@aegisjsproject/url@1.0.1/",
+    "@aegisjsproject/idb/": "https://unpkg.com/@aegisjsproject/idb@1.0.0/",
+    "@aegisjsproject/idb": "https://unpkg.com/@aegisjsproject/idb@1.0.0/idb.min.js",
     "@shgysk8zer0/components/": "https://unpkg.com/@shgysk8zer0/components@0.3.15/",
     "@aegisjsproject/state": "https://unpkg.com/@aegisjsproject/state@1.0.5/state.mjs",
     "@aegisjsproject/state/": "https://unpkg.com/@aegisjsproject/state@1.0.5/",
