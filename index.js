@@ -7,8 +7,8 @@ import { getFileURL } from '@shgysk8zer0/npm-utils/path.js';
 const imports$1 = {
 	"@shgysk8zer0/kazoo/": "https://unpkg.com/@shgysk8zer0/kazoo@1.0.9/",
 	"@shgysk8zer0/konami": "https://unpkg.com/@shgysk8zer0/konami@1.1.1/konami.js",
-	"@shgysk8zer0/polyfills": "https://unpkg.com/@shgysk8zer0/polyfills@0.4.8/browser.min.js",
-	"@shgysk8zer0/polyfills/": "https://unpkg.com/@shgysk8zer0/polyfills@0.4.8/",
+	"@shgysk8zer0/polyfills": "https://unpkg.com/@shgysk8zer0/polyfills@0.4.9/browser.min.js",
+	"@shgysk8zer0/polyfills/": "https://unpkg.com/@shgysk8zer0/polyfills@0.4.9/",
 	"@shgysk8zer0/jwk-utils": "https://unpkg.com/@shgysk8zer0/jwk-utils@1.0.20/jwk-utils.min.js",
 	"@shgysk8zer0/jwk-utils/": "https://unpkg.com/@shgysk8zer0/jwk-utils@1.0.20/",
 	"@shgysk8zer0/jswaggersheets": "https://unpkg.com/@shgysk8zer0/jswaggersheets@1.1.0/swagger.js",
