@@ -7,6 +7,11 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [v1.4.49] - 2025-02-20
+
+### Fixed
+- Fixed incorrect default for `@aegisjsproject/markdown`
+
 ## [v1.4.48] - 2025-02-02
 
 ### Changed

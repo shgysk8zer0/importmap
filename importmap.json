@@ -32,7 +32,7 @@
     "@aegisjsproject/styles/": "https://unpkg.com/@aegisjsproject/styles@0.2.6/",
     "@aegisjsproject/component": "https://unpkg.com/@aegisjsproject/component@0.1.6/component.js",
     "@aegisjsproject/component/": "https://unpkg.com/@aegisjsproject/component@0.1.6/",
-    "@aegisjsproject/markdown": "https://unpkg.com/@aegisjsproject/markdown@0.1.5/markdown.js",
+    "@aegisjsproject/markdown": "https://unpkg.com/@aegisjsproject/markdown@0.1.5/markdown.min.js",
     "@aegisjsproject/markdown/": "https://unpkg.com/@aegisjsproject/markdown@0.1.5/",
     "@aegisjsproject/aegis-md": "https://unpkg.com/@aegisjsproject/aegis-md@0.0.4/aegis-md.js",
     "@aegisjsproject/aegis-md/": "https://unpkg.com/@aegisjsproject/aegis-md@0.0.4/",
