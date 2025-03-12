@@ -67,7 +67,7 @@
   },
   "dependencies": {
     "@shgysk8zer0/npm-utils": "^1.1.3",
-    "@shgysk8zer0/polyfills": "^0.4.9",
+    "@shgysk8zer0/polyfills": "^0.4.10",
     "commander": "^13.1.0"
   }
 }
