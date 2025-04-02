@@ -7,6 +7,11 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [v1.4.53] - 2025-04-02
+
+### Changed
+- Update `@aegisjsproject/router`
+
 ## [v1.4.52] - 2025-03-31
 
 ### Changed
