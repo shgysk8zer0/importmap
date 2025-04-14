@@ -7,6 +7,11 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [v1.4.55] - 2025-04-14
+
+### Added
+- Add `@aegisjsproject/otp`
+
 ## [v1.4.54] - 2025-04-08
 
 ### Changed
