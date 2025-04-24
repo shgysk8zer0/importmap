@@ -7,6 +7,11 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [v1.4.59] - 2025-04-24
+
+### Changed
+- Update `@shgysk8zer0/polyfills`
+
 ## [v1.4.58] - 2025-04-24
 
 ### Changed
