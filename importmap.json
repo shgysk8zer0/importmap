@@ -42,6 +42,8 @@
     "@aegisjsproject/idb": "https://unpkg.com/@aegisjsproject/idb@1.0.4/idb.min.js",
     "@aegisjsproject/otp/": "https://unpkg.com/@aegisjsproject/otp@1.0.1/",
     "@aegisjsproject/otp": "https://unpkg.com/@aegisjsproject/otp@1.0.1/otp.min.js",
+    "@aegisjsproject/md-editor": "https://unpkg.com/@aegisjsproject/md-editor@1.0.0/md-editor.js",
+    "@aegisjsproject/md-editor/": "https://unpkg.com/@aegisjsproject/md-editor@1.0.0/",
     "@shgysk8zer0/components/": "https://unpkg.com/@shgysk8zer0/components@0.3.16/",
     "@aegisjsproject/state": "https://unpkg.com/@aegisjsproject/state@1.0.5/state.mjs",
     "@aegisjsproject/state/": "https://unpkg.com/@aegisjsproject/state@1.0.5/",

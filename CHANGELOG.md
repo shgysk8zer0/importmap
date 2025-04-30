@@ -7,6 +7,11 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [v1.4.61] - 2025-04-30
+
+### Added
+- Add `@aegisjsproject/md-editor`
+
 ## [v1.4.60] - 2025-04-25
 
 ### Changed
