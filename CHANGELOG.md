@@ -7,6 +7,11 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [v1.4.62] - 2025-05-01
+
+### Added
+- Add `@aegisjsproject/barcodecanner`
+
 ## [v1.4.61] - 2025-04-30
 
 ### Added
