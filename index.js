@@ -49,6 +49,8 @@ const imports$1 = {
 	"@aegisjsproject/otp": "https://unpkg.com/@aegisjsproject/otp@1.0.1/otp.min.js",
 	"@aegisjsproject/md-editor": "https://unpkg.com/@aegisjsproject/md-editor@1.0.0/md-editor.js",
 	"@aegisjsproject/md-editor/": "https://unpkg.com/@aegisjsproject/md-editor@1.0.0/",
+	"@aegisjsproject/barcodescanner": "https://unpkg.com/@aegisjsproject/barcodescanner/scanner.min.js",
+	"@aegisjsproject/barcodescanner/": "https://unpkg.com/@aegisjsproject/barcodescanner/",
 	"@shgysk8zer0/components/": "https://unpkg.com/@shgysk8zer0/components@0.3.16/",
 	"@aegisjsproject/state": "https://unpkg.com/@aegisjsproject/state@1.0.5/state.mjs",
 	"@aegisjsproject/state/": "https://unpkg.com/@aegisjsproject/state@1.0.5/",
