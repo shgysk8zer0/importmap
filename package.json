@@ -1,6 +1,6 @@
 {
   "name": "@shgysk8zer0/importmap",
-  "version": "1.4.68",
+  "version": "1.4.69",
   "engines": {
     "node": ">=18.0.0"
   },
@@ -33,6 +33,7 @@
     "importmap-utils": "./cli.mjs"
   },
   "scripts": {
+    "start": "npx @shgysk8zer0/http-server -c ./http.config.js",
     "test": "npm run lint:js && npm run run:tests && npm run test:imports",
     "preversion": "npm test && npm run build",
     "prepare": "npm test && npm run build",
