@@ -53,6 +53,8 @@
     "@aegisjsproject/router/": "https://unpkg.com/@aegisjsproject/router@1.1.11/",
     "@aegisjsproject/callback-registry": "https://unpkg.com/@aegisjsproject/callback-registry@1.0.2/callbackRegistry.js",
     "@aegisjsproject/callback-registry/": "https://unpkg.com/@aegisjsproject/callback-registry@1.0.2/",
+    "@aegisjsproject/attempt": "https://unpkg.com/@aegisjsproject/attempt@1.0.0/attempt.js",
+    "@aegisjsproject/attempt/": "https://unpkg.com/@aegisjsproject/attempt@1.0.0/",
     "@kernvalley/components/": "https://unpkg.com/@kernvalley/components@2.0.6/",
     "@webcomponents/custom-elements": "https://unpkg.com/@webcomponents/custom-elements@1.6.0/custom-elements.min.js",
     "leaflet": "https://unpkg.com/leaflet@1.9.4/dist/leaflet-src.esm.js",
