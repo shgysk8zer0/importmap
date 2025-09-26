@@ -7,6 +7,15 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [v1.4.76] - 2025-09-28
+
+### Added
+- Add `@aegisjsproject/secret-store`
+
+### Changed
+- Update `@shgysk8zer0/polyfills` (adds Invoker Commands)
+- Misc updates
+
 ## [v1.4.75] - 2025-08-10
 
 ### Changed
