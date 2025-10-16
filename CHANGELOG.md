@@ -7,6 +7,14 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [v1.4.82] - 2025-10-16
+
+### Changed
+- Update `@aegisjsproject/state`
+- Update various GH Actions
+- Switch to new publishing on npm
+- Switch to node 24.10.0
+
 ## [v1.4.81] - 2025-10-08
 
 ### Changed
