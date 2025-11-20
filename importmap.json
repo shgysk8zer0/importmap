@@ -61,7 +61,7 @@
     "@aegisjsproject/firebase-account-routes": "https://unpkg.com/@aegisjsproject/firebase-account-routes@0.0.5/main.js",
     "@aegisjsproject/firebase-account-routes/": "https://unpkg.com/@aegisjsproject/firebase-account-routes@0.0.5/",
     "@aegisjsproject/secret-store/": "https://unpkg.com/@aegisjsproject/secret-store@1.0.1/",
-    "@kernvalley/components/": "https://unpkg.com/@kernvalley/components@2.0.8/",
+    "@kernvalley/components/": "https://unpkg.com/@kernvalley/components@2.0.9/",
     "@webcomponents/custom-elements": "https://unpkg.com/@webcomponents/custom-elements@1.6.0/custom-elements.min.js",
     "leaflet": "https://unpkg.com/leaflet@1.9.4/dist/leaflet-src.esm.js",
     "leaflet/": "https://unpkg.com/leaflet@1.9.4/dist/",
