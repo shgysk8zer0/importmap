@@ -4,7 +4,8 @@ import { readYAMLFile, writeYAMLFile } from '@shgysk8zer0/npm-utils/yaml.js';
 import { readJSONFile, writeJSONFile } from '@shgysk8zer0/npm-utils/json.js';
 import { getFileURL } from '@shgysk8zer0/npm-utils/path.js';
 
-const imports$1 = {
+const imports$2 = {
+	"@node/": "/node_modules/",
 	"@shgysk8zer0/kazoo/": "https://unpkg.com/@shgysk8zer0/kazoo@1.0.10/",
 	"@shgysk8zer0/konami": "https://unpkg.com/@shgysk8zer0/konami@1.1.1/konami.js",
 	"@shgysk8zer0/polyfills": "https://unpkg.com/@shgysk8zer0/polyfills@0.5.1/browser.min.js",
@@ -43,8 +44,8 @@ const imports$1 = {
 	"@aegisjsproject/aegis-md/": "https://unpkg.com/@aegisjsproject/aegis-md@0.0.4/",
 	"@aegisjsproject/url": "https://unpkg.com/@aegisjsproject/url@1.0.3/url.mjs",
 	"@aegisjsproject/url/": "https://unpkg.com/@aegisjsproject/url@1.0.3/",
-	"@aegisjsproject/idb/": "https://unpkg.com/@aegisjsproject/idb@1.0.4/",
-	"@aegisjsproject/idb": "https://unpkg.com/@aegisjsproject/idb@1.0.4/idb.min.js",
+	"@aegisjsproject/idb/": "https://unpkg.com/@aegisjsproject/idb@1.0.5/",
+	"@aegisjsproject/idb": "https://unpkg.com/@aegisjsproject/idb@1.0.5/idb.min.js",
 	"@aegisjsproject/otp/": "https://unpkg.com/@aegisjsproject/otp@1.0.1/",
 	"@aegisjsproject/otp": "https://unpkg.com/@aegisjsproject/otp@1.0.1/otp.min.js",
 	"@aegisjsproject/md-editor": "https://unpkg.com/@aegisjsproject/md-editor@1.0.0/md-editor.js",
@@ -66,7 +67,7 @@ const imports$1 = {
 	"@aegisjsproject/firebase-account-routes": "https://unpkg.com/@aegisjsproject/firebase-account-routes@0.0.5/main.js",
 	"@aegisjsproject/firebase-account-routes/": "https://unpkg.com/@aegisjsproject/firebase-account-routes@0.0.5/",
 	"@aegisjsproject/secret-store/": "https://unpkg.com/@aegisjsproject/secret-store@1.0.1/",
-	"@kernvalley/components/": "https://unpkg.com/@kernvalley/components@2.0.8/",
+	"@kernvalley/components/": "https://unpkg.com/@kernvalley/components@2.0.9/",
 	"@webcomponents/custom-elements": "https://unpkg.com/@webcomponents/custom-elements@1.6.0/custom-elements.min.js",
 	leaflet: "https://unpkg.com/leaflet@1.9.4/dist/leaflet-src.esm.js",
 	"leaflet/": "https://unpkg.com/leaflet@1.9.4/dist/",
@@ -75,10 +76,10 @@ const imports$1 = {
 	"highlight.js/": "https://unpkg.com/@highlightjs/cdn-assets@11.11.1/es/",
 	"@highlightjs/cdn-assets": "https://unpkg.com/@highlightjs/cdn-assets@11.11.1/es/core.min.js",
 	"@highlightjs/cdn-assets/": "https://unpkg.com/@highlightjs/cdn-assets@11.11.1/es/",
-	marked: "https://unpkg.com/marked@17.0.0/lib/marked.esm.js",
+	marked: "https://unpkg.com/marked@17.0.1/lib/marked.esm.js",
 	"marked-highlight": "https://unpkg.com/marked-highlight@2.2.3/src/index.js",
-	yaml: "https://unpkg.com/yaml@2.8.1/browser/dist/index.js",
-	"yaml/": "https://unpkg.com/yaml@2.8.1/browser/dist/",
+	yaml: "https://unpkg.com/yaml@2.8.2/browser/dist/index.js",
+	"yaml/": "https://unpkg.com/yaml@2.8.2/browser/dist/",
 	"firebase/": "https://www.gstatic.com/firebasejs/10.12.1/",
 	"firebase/app": "https://www.gstatic.com/firebasejs/10.12.1/firebase-app.js",
 	"firebase/app-check": "https://www.gstatic.com/firebasejs/10.12.1/firebase-app-check.js",
@@ -92,16 +93,16 @@ const imports$1 = {
 	"firebase/storage": "https://www.gstatic.com/firebasejs/10.12.1/firebase-storage.js",
 	"firebase/analytics": "https://www.gstatic.com/firebasejs/10.12.1/firebase-analytics.js"
 };
-const scope$1 = {
+const scope$2 = {
+};
+var json = {
+	imports: imports$2,
+	scope: scope$2
 };
 
-var importmap = /*#__PURE__*/Object.freeze({
-  __proto__: null,
-  imports: imports$1,
-  scope: scope$1
-});
-
+const SHA256 = 'SHA-256';
 const SHA384 = 'SHA-384';
+const SHA512 = 'SHA-512';
 const DEFAULT_ALGO = SHA384;
 
 const BASE64 = 'base64';
@@ -137,6 +138,83 @@ async function hash(data, { algo = DEFAULT_ALGO, output = BUFFER } = {}) {
 }
 
 const sri = async(data, { algo = SHA384 } = {}) => hash(data, { algo, output: SRI });
+
+const { imports: imports$1, scope: scope$1 } = json;
+
+class Importmap {
+	#imports = {};
+	#scope = {};
+
+	constructor({ imports: i = imports$1, scope: s = scope$1 } = {}) {
+		this.#imports = i;
+		this.#scope = s;
+	}
+
+	delete(key) {
+		return Reflect.deleteProperty(this.#imports, key);
+	}
+
+	get(key) {
+		return Reflect.get(this.#imports, key);
+	}
+
+	has(key) {
+		return Reflect.has(this.#imports, key);
+	}
+
+	set(key, newValue) {
+		return Reflect.set(this.#imports, key, newValue);
+	}
+
+	toJSON() {
+		return { imports: this.#imports, scope: this.#scope };
+	}
+
+	toString() {
+		return JSON.stringify(this);
+	}
+
+	async getScript({ algo = DEFAULT_ALGO, alphabet = BASE64, signal } = {}) {
+		const integrity = await this.getIntegrity({ algo, alphabet, signal });
+
+		return `<script type="importmap" integrity="${integrity}">${JSON.stringify(this)}</script>`;
+	}
+
+	async getIntegrity({ algo = DEFAULT_ALGO, alphabet = BASE64, signal } = {}) {
+		if (signal instanceof AbortSignal && signal.aborted) {
+			throw signal.reason;
+		} else {
+			const prefix = algo.toLowerCase().replace('-', '') + '-';
+			const encoded = new TextEncoder().encode(this);
+			const hash = await crypto.subtle.digest(algo, encoded);
+
+			return prefix + new Uint8Array(hash).toBase64({ alphabet });
+		}
+	}
+
+	static get SHA256() {
+		return SHA256;
+	}
+
+	static get SHA384() {
+		return SHA384;
+	}
+
+	static get SHA512() {
+		return SHA512;
+	}
+}
+
+const importmap = new Importmap({ imports: imports$1, scope: scope$1 });
+
+var importmap$1 = /*#__PURE__*/Object.freeze({
+  __proto__: null,
+  Importmap: Importmap,
+  default: importmap,
+  importmap: importmap,
+  imports: imports$1,
+  scope: scope$1
+});
 
 const UNPKG = 'https://unpkg.com/';
 
@@ -263,7 +341,7 @@ var unpkg = /*#__PURE__*/Object.freeze({
   updateYAML: updateYAML
 });
 
-const { imports, scope } = importmap;
+const { imports, scope } = importmap$1;
 const ENCODING = 'utf8';
 
 function mergeWithImportmap({ imports = {}, scope = {}}) {
@@ -296,4 +374,4 @@ async function getImportmapScript({
 	return `<script type="importmap" integrity="${integrity}">${JSON.stringify(importmap)}</script>`;
 }
 
-export { ENCODING, createImportmapJSON, getImportmapIntegrity, getImportmapScript, importmap, imports, mergeWithImportmap, scope, unpkg };
+export { ENCODING, createImportmapJSON, getImportmapIntegrity, getImportmapScript, importmap$1 as importmap, imports, mergeWithImportmap, scope, unpkg };
