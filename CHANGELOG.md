@@ -7,6 +7,13 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [v1.5.0] - 2025-12-03
+
+### Added
+- Add `Importmap` class with `Map`-like methods and SRI/`<script>` generating methods
+
+### Changed
+- Update `@aegisjsproject/idb` and `yaml`
 
 ## [v1.4.88] - 2025-11-19
 
