@@ -1,7 +1,7 @@
-import { getImportmapIntegrity, getImportmapScript, imports } from '@shgysk8zer0/importmap';
-
-const integrity = await getImportmapIntegrity();
-const importmap = await getImportmapScript();
+import { Importmap } from '@shgysk8zer0/importmap';
+const importmap = await Importmap.importFromFile();
+await importmap.importLocalPackage();
+const integrity = await importmap.getIntegrity();
 
 const icon =  `<svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
 	<rect x="0" y="0" width="100" height="100" rx="10" ry="10" fill="#${crypto.getRandomValues(new Uint8Array(3)).toHex()}"></rect>
@@ -22,6 +22,8 @@ const script = String.dedent`
 	import { onClick, observeEvents } from '@aegisjsproject/callback-registry/events.js';
 	import { HTMLAegisMDElement } from '@aegisjsproject/aegis-md';
 	import javascript from 'highlight.js/languages/javascript.min.js';
+
+	console.log(import.meta.resolve('@shgysk8zer0/importmap/importmap'));
 
 	const custom = css\`[popover] {
 		border: none;
@@ -77,7 +79,7 @@ const doc = String.dedent`
 			<meta name="color-scheme" content="light dark" />
 			<title>@shgysk8zer0/importmap test</title>
 			<link rel="icon" href="/favicon.svg" type="image/svg+xml" sizes="any" referrerpolicy="no-referrer" integrity="${iconIntegrity}" />
-			${importmap}
+			${await importmap.getScript()}
 			<script integrity="${scriptIntegrity}" type="module">${script}</script>
 		</head>
 		<body>
@@ -105,7 +107,7 @@ const headers = new Headers({
 	'Content-Type': 'text/html',
 	'Referrer-Policy': 'no-referrer',
 	'Content-Security-Policy': `default-src 'self';
-		script-src 'self' ${Object.values(imports).join(' ')} '${integrity}' '${scriptIntegrity}';
+		script-src 'self' ${Object.values(importmap.imports).join(' ')} '${integrity}' '${scriptIntegrity}';
 		style-src 'self' https://unpkg.com/ blob:;
 		img-src 'self' blob: '${iconIntegrity}';
 		trusted-types default aegis-sanitizer#html;

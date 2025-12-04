@@ -1,21 +1,19 @@
 import { writeFile } from 'node:fs/promises';
-import * as importmap from './importmap.mjs';
+import { Importmap, importmap, imports, scopes } from './importmap.mjs';
 import { sri, DEFAULT_ALGO } from './hash.js';
 
-export const { imports, scope } = importmap;
 export const ENCODING = 'utf8';
-export { importmap };
 export * as unpkg from './unpkg.js';
 
-export function mergeWithImportmap({ imports = {}, scope = {}}) {
+export function mergeWithImportmap({ imports = {}, scopes = {}}) {
 	return {
 		imports: { ...importmap.imports, ...imports },
-		scope: { ...importmap.scope, ...scope },
+		scopes: { ...importmap.scope, ...scopes },
 	};
 }
 
 export async function createImportmapJSON(path = 'importmap.json', {
-	importmap = { imports, scope },
+	importmap = { imports, scopes },
 	spaces = 2,
 	signal,
 } = {}) {
@@ -23,16 +21,18 @@ export async function createImportmapJSON(path = 'importmap.json', {
 }
 
 export async function getImportmapIntegrity({
-	importmap = { imports, scope },
+	importmap = { imports, scopes },
 	algo = DEFAULT_ALGO,
 } = {}) {
 	return await sri(JSON.stringify(importmap), { algo });
 }
 
 export async function getImportmapScript({
-	importmap = { imports, scope },
+	importmap = { imports, scopes },
 	algo = DEFAULT_ALGO,
 } = {}) {
 	const integrity = await getImportmapIntegrity({ importmap, algo });
 	return `<script type="importmap" integrity="${integrity}">${JSON.stringify(importmap)}</script>`;
 }
+
+export { importmap, imports, scopes, Importmap };

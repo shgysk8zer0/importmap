@@ -1,15 +1,25 @@
+import { join } from 'node:path';
+import { readFile } from 'node:fs/promises';
 import json from './importmap.json' with { type: 'json' };
 import { SHA256, SHA384, SHA512, DEFAULT_ALGO, BASE64 } from './hash.js';
 
-const { imports, scope } = json;
+const { imports, scopes } = json;
 
 export class Importmap {
 	#imports = {};
-	#scope = {};
+	#scopes = {};
 
-	constructor({ imports: i = imports, scope: s = scope } = {}) {
+	constructor({ imports: i = imports, scopes: s = scopes } = {}) {
 		this.#imports = i;
-		this.#scope = s;
+		this.#scopes = s;
+	}
+
+	get imports() {
+		return structuredClone(this.#imports);
+	}
+
+	get scopes() {
+		return structuredClone(this.#scopes);
 	}
 
 	delete(key) {
@@ -29,11 +39,54 @@ export class Importmap {
 	}
 
 	toJSON() {
-		return { imports: this.#imports, scope: this.#scope };
+		return { imports: this.#imports, scopes: this.#scopes };
 	}
 
 	toString() {
 		return JSON.stringify(this);
+	}
+
+	async importLocalPackage(name = 'package.json', { signal } = {}) {
+		const path = join(process.cwd(), name);
+		const pkg = await readFile(path, { encoding: 'utf8', signal });
+
+		return this.setLocalPackage(JSON.parse(pkg));
+	}
+
+	setLocalPackage({ name, module, exports = {} }) {
+		if (typeof name !== 'string') {
+			return false;
+		} else if (typeof exports === 'string' ) {
+			this.set(name, exports);
+			return true;
+		} else if (typeof exports === 'object') {
+			Object.entries(exports).forEach(([key, value]) => {
+				if (key.startsWith('.')) {
+					const importKey = key === '.' ? name : `${name}${key.substring(1)}`;
+					const resolved = typeof value === 'string' ? value : value.import ?? value.default;
+
+					if (typeof resolved === 'string' && resolved.startsWith('./')) {
+						if (importKey.includes('*') && resolved.includes('*')) {
+							const [prefix, suffix] = importKey.split('*');
+
+							if (resolved.endsWith('*' + suffix)) {
+								this.set(prefix, resolved.substring(1).replace('*' + suffix, ''));
+							}
+						} else {
+							this.set(importKey, resolved.substring(1));
+						}
+					}
+				}
+			});
+
+			return true;
+		} else if (typeof module === 'string') {
+			this.set(name, module);
+			return true;
+		} else {
+			this.set(name, '/');
+			return true;
+		}
 	}
 
 	async getScript({ algo = DEFAULT_ALGO, alphabet = BASE64, signal } = {}) {
@@ -65,9 +118,15 @@ export class Importmap {
 	static get SHA512() {
 		return SHA512;
 	}
+
+	static async importFromFile(path = 'importmap.json', { signal } = {}) {
+		const fullPath = join(process.cwd(), path);
+		const importmap = await readFile(fullPath, { encoding: 'utf8', signal });
+
+		return new Importmap(JSON.parse(importmap));
+	}
 }
 
-export const importmap = new Importmap({ imports, scope });
-
-export { imports, scope };
-export default importmap;
+export const importmap = new Importmap({ imports, scopes });
+export { imports, scopes };
+export default { imports, scopes };

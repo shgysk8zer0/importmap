@@ -1,10 +1,11 @@
-import { writeFile } from 'node:fs/promises';
+import { readFile, writeFile } from 'node:fs/promises';
+import { join } from 'node:path';
 import '@shgysk8zer0/polyfills';
 import { readYAMLFile, writeYAMLFile } from '@shgysk8zer0/npm-utils/yaml.js';
 import { readJSONFile, writeJSONFile } from '@shgysk8zer0/npm-utils/json.js';
 import { getFileURL } from '@shgysk8zer0/npm-utils/path.js';
 
-const imports$2 = {
+const imports$1 = {
 	"@node/": "/node_modules/",
 	"@shgysk8zer0/kazoo/": "https://unpkg.com/@shgysk8zer0/kazoo@1.0.10/",
 	"@shgysk8zer0/konami": "https://unpkg.com/@shgysk8zer0/konami@1.1.1/konami.js",
@@ -93,11 +94,11 @@ const imports$2 = {
 	"firebase/storage": "https://www.gstatic.com/firebasejs/10.12.1/firebase-storage.js",
 	"firebase/analytics": "https://www.gstatic.com/firebasejs/10.12.1/firebase-analytics.js"
 };
-const scope$2 = {
+const scopes$1 = {
 };
 var json = {
-	imports: imports$2,
-	scope: scope$2
+	imports: imports$1,
+	scopes: scopes$1
 };
 
 const SHA256 = 'SHA-256';
@@ -139,15 +140,23 @@ async function hash(data, { algo = DEFAULT_ALGO, output = BUFFER } = {}) {
 
 const sri = async(data, { algo = SHA384 } = {}) => hash(data, { algo, output: SRI });
 
-const { imports: imports$1, scope: scope$1 } = json;
+const { imports, scopes } = json;
 
 class Importmap {
 	#imports = {};
-	#scope = {};
+	#scopes = {};
 
-	constructor({ imports: i = imports$1, scope: s = scope$1 } = {}) {
+	constructor({ imports: i = imports, scopes: s = scopes } = {}) {
 		this.#imports = i;
-		this.#scope = s;
+		this.#scopes = s;
+	}
+
+	get imports() {
+		return structuredClone(this.#imports);
+	}
+
+	get scopes() {
+		return structuredClone(this.#scopes);
 	}
 
 	delete(key) {
@@ -167,11 +176,54 @@ class Importmap {
 	}
 
 	toJSON() {
-		return { imports: this.#imports, scope: this.#scope };
+		return { imports: this.#imports, scopes: this.#scopes };
 	}
 
 	toString() {
 		return JSON.stringify(this);
+	}
+
+	async importLocalPackage(name = 'package.json', { signal } = {}) {
+		const path = join(process.cwd(), name);
+		const pkg = await readFile(path, { encoding: 'utf8', signal });
+
+		return this.setLocalPackage(JSON.parse(pkg));
+	}
+
+	setLocalPackage({ name, module, exports = {} }) {
+		if (typeof name !== 'string') {
+			return false;
+		} else if (typeof exports === 'string' ) {
+			this.set(name, exports);
+			return true;
+		} else if (typeof exports === 'object') {
+			Object.entries(exports).forEach(([key, value]) => {
+				if (key.startsWith('.')) {
+					const importKey = key === '.' ? name : `${name}${key.substring(1)}`;
+					const resolved = typeof value === 'string' ? value : value.import ?? value.default;
+
+					if (typeof resolved === 'string' && resolved.startsWith('./')) {
+						if (importKey.includes('*') && resolved.includes('*')) {
+							const [prefix, suffix] = importKey.split('*');
+
+							if (resolved.endsWith('*' + suffix)) {
+								this.set(prefix, resolved.substring(1).replace('*' + suffix, ''));
+							}
+						} else {
+							this.set(importKey, resolved.substring(1));
+						}
+					}
+				}
+			});
+
+			return true;
+		} else if (typeof module === 'string') {
+			this.set(name, module);
+			return true;
+		} else {
+			this.set(name, '/');
+			return true;
+		}
 	}
 
 	async getScript({ algo = DEFAULT_ALGO, alphabet = BASE64, signal } = {}) {
@@ -203,18 +255,16 @@ class Importmap {
 	static get SHA512() {
 		return SHA512;
 	}
+
+	static async importFromFile(path = 'importmap.json', { signal } = {}) {
+		const fullPath = join(process.cwd(), path);
+		const importmap = await readFile(fullPath, { encoding: 'utf8', signal });
+
+		return new Importmap(JSON.parse(importmap));
+	}
 }
 
-const importmap = new Importmap({ imports: imports$1, scope: scope$1 });
-
-var importmap$1 = /*#__PURE__*/Object.freeze({
-  __proto__: null,
-  Importmap: Importmap,
-  default: importmap,
-  importmap: importmap,
-  imports: imports$1,
-  scope: scope$1
-});
+const importmap = new Importmap({ imports, scopes });
 
 const UNPKG = 'https://unpkg.com/';
 
@@ -341,18 +391,17 @@ var unpkg = /*#__PURE__*/Object.freeze({
   updateYAML: updateYAML
 });
 
-const { imports, scope } = importmap$1;
 const ENCODING = 'utf8';
 
-function mergeWithImportmap({ imports = {}, scope = {}}) {
+function mergeWithImportmap({ imports = {}, scopes = {}}) {
 	return {
-		imports: { ...imports$1, ...imports },
-		scope: { ...scope$1, ...scope },
+		imports: { ...importmap.imports, ...imports },
+		scopes: { ...importmap.scope, ...scopes },
 	};
 }
 
 async function createImportmapJSON(path = 'importmap.json', {
-	importmap = { imports, scope },
+	importmap = { imports, scopes },
 	spaces = 2,
 	signal,
 } = {}) {
@@ -360,18 +409,18 @@ async function createImportmapJSON(path = 'importmap.json', {
 }
 
 async function getImportmapIntegrity({
-	importmap = { imports, scope },
+	importmap = { imports, scopes },
 	algo = DEFAULT_ALGO,
 } = {}) {
 	return await sri(JSON.stringify(importmap), { algo });
 }
 
 async function getImportmapScript({
-	importmap = { imports, scope },
+	importmap = { imports, scopes },
 	algo = DEFAULT_ALGO,
 } = {}) {
 	const integrity = await getImportmapIntegrity({ importmap, algo });
 	return `<script type="importmap" integrity="${integrity}">${JSON.stringify(importmap)}</script>`;
 }
 
-export { ENCODING, createImportmapJSON, getImportmapIntegrity, getImportmapScript, importmap$1 as importmap, imports, mergeWithImportmap, scope, unpkg };
+export { ENCODING, Importmap, createImportmapJSON, getImportmapIntegrity, getImportmapScript, importmap, imports, mergeWithImportmap, scopes, unpkg };
