@@ -7,6 +7,15 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [v1.5.1] - 2025-12-04
+
+### Added
+- Add `Importmap` methods to set local imports using `package.json`
+- Add static `Importmap.importFromFile()` to import from a local JSON file
+
+### Changed
+- Update package & module `exports`
+
 ## [v1.5.0] - 2025-12-03
 
 ### Added

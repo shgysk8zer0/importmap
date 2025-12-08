@@ -1,8 +1,8 @@
 {
   "name": "@shgysk8zer0/importmap",
-  "version": "1.5.0",
+  "version": "1.5.1",
   "engines": {
-    "node": ">=18.0.0"
+    "node": ">=20.10.0"
   },
   "description": "Front-End dependencies based on `<script type=\"importmap\">`",
   "type": "module",
@@ -13,6 +13,9 @@
     ".": {
       "import": "./index.js",
       "require": "./index.cjs"
+    },
+    "./importmap": {
+      "import": "./importmap.js"
     },
     "./*.js": {
       "import": "./*.js",
