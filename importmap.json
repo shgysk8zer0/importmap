@@ -1,5 +1,6 @@
 {
   "imports": {
+    "@node/": "/node_modules/",
     "@shgysk8zer0/kazoo/": "https://unpkg.com/@shgysk8zer0/kazoo@1.0.10/",
     "@shgysk8zer0/konami": "https://unpkg.com/@shgysk8zer0/konami@1.1.1/konami.js",
     "@shgysk8zer0/polyfills": "https://unpkg.com/@shgysk8zer0/polyfills@0.5.1/browser.min.js",
@@ -38,8 +39,8 @@
     "@aegisjsproject/aegis-md/": "https://unpkg.com/@aegisjsproject/aegis-md@0.0.4/",
     "@aegisjsproject/url": "https://unpkg.com/@aegisjsproject/url@1.0.3/url.mjs",
     "@aegisjsproject/url/": "https://unpkg.com/@aegisjsproject/url@1.0.3/",
-    "@aegisjsproject/idb/": "https://unpkg.com/@aegisjsproject/idb@1.0.4/",
-    "@aegisjsproject/idb": "https://unpkg.com/@aegisjsproject/idb@1.0.4/idb.min.js",
+    "@aegisjsproject/idb/": "https://unpkg.com/@aegisjsproject/idb@1.0.5/",
+    "@aegisjsproject/idb": "https://unpkg.com/@aegisjsproject/idb@1.0.5/idb.min.js",
     "@aegisjsproject/otp/": "https://unpkg.com/@aegisjsproject/otp@1.0.1/",
     "@aegisjsproject/otp": "https://unpkg.com/@aegisjsproject/otp@1.0.1/otp.min.js",
     "@aegisjsproject/md-editor": "https://unpkg.com/@aegisjsproject/md-editor@1.0.0/md-editor.js",
@@ -72,8 +73,8 @@
     "@highlightjs/cdn-assets/": "https://unpkg.com/@highlightjs/cdn-assets@11.11.1/es/",
     "marked": "https://unpkg.com/marked@17.0.1/lib/marked.esm.js",
     "marked-highlight": "https://unpkg.com/marked-highlight@2.2.3/src/index.js",
-    "yaml": "https://unpkg.com/yaml@2.8.1/browser/dist/index.js",
-    "yaml/": "https://unpkg.com/yaml@2.8.1/browser/dist/",
+    "yaml": "https://unpkg.com/yaml@2.8.2/browser/dist/index.js",
+    "yaml/": "https://unpkg.com/yaml@2.8.2/browser/dist/",
     "firebase/": "https://www.gstatic.com/firebasejs/10.12.1/",
     "firebase/app": "https://www.gstatic.com/firebasejs/10.12.1/firebase-app.js",
     "firebase/app-check": "https://www.gstatic.com/firebasejs/10.12.1/firebase-app-check.js",
@@ -87,5 +88,5 @@
     "firebase/storage": "https://www.gstatic.com/firebasejs/10.12.1/firebase-storage.js",
     "firebase/analytics": "https://www.gstatic.com/firebasejs/10.12.1/firebase-analytics.js"
   },
-  "scope": {}
+  "scopes": {}
 }
