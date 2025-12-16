@@ -51,8 +51,8 @@ const imports$1 = {
 	"@aegisjsproject/otp": "https://unpkg.com/@aegisjsproject/otp@1.0.1/otp.min.js",
 	"@aegisjsproject/md-editor": "https://unpkg.com/@aegisjsproject/md-editor@1.0.0/md-editor.js",
 	"@aegisjsproject/md-editor/": "https://unpkg.com/@aegisjsproject/md-editor@1.0.0/",
-	"@aegisjsproject/barcodescanner": "https://unpkg.com/@aegisjsproject/barcodescanner@1.2.1/scanner.min.js",
-	"@aegisjsproject/barcodescanner/": "https://unpkg.com/@aegisjsproject/barcodescanner@1.2.1/",
+	"@aegisjsproject/barcodescanner": "https://unpkg.com/@aegisjsproject/barcodescanner@1.2.2/scanner.min.js",
+	"@aegisjsproject/barcodescanner/": "https://unpkg.com/@aegisjsproject/barcodescanner@1.2.2/",
 	"@shgysk8zer0/components/": "https://unpkg.com/@shgysk8zer0/components@0.3.20/",
 	"@aegisjsproject/state": "https://unpkg.com/@aegisjsproject/state@1.0.7/state.mjs",
 	"@aegisjsproject/state/": "https://unpkg.com/@aegisjsproject/state@1.0.7/",
@@ -291,7 +291,6 @@ function parseUnpkgURL(src) {
 }
 
 function getUnpkgURL({ scope, pkg, version, module = '' }) {
-	// console.log({ scope, pkg, version });
 	if (typeof pkg !== 'string' || pkg.length === 0) {
 		throw new TypeError('Package name must be a non-empty string.');
 	} else if (typeof version !== 'string' || version.length === 0) {

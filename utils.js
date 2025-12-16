@@ -23,7 +23,6 @@ export function parseUnpkgURL(src) {
 }
 
 export function getUnpkgURL({ scope, pkg, version, module = '' }) {
-	// console.log({ scope, pkg, version });
 	if (typeof pkg !== 'string' || pkg.length === 0) {
 		throw new TypeError('Package name must be a non-empty string.');
 	} else if (typeof version !== 'string' || version.length === 0) {

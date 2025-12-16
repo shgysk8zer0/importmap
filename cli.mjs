@@ -66,8 +66,6 @@ init().then(async ({ opts: { input, encoding, format, output }}) => {
 		}))
 		: importmap;
 
-	console.log(mod);
-
 	switch(format ?? guessFileType(output)) {
 		case 'json':
 			await writeJSONFile(output, mod, { encoding });
