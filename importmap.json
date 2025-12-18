@@ -86,7 +86,9 @@
     "firebase/performance": "https://www.gstatic.com/firebasejs/10.12.1/firebase-performance.js",
     "firebase/remote-config": "https://www.gstatic.com/firebasejs/10.12.1/firebase-remote-config.js",
     "firebase/storage": "https://www.gstatic.com/firebasejs/10.12.1/firebase-storage.js",
-    "firebase/analytics": "https://www.gstatic.com/firebasejs/10.12.1/firebase-analytics.js"
+    "firebase/analytics": "https://www.gstatic.com/firebasejs/10.12.1/firebase-analytics.js",
+    "qr": "https://unpkg.com/qr@0.5.3/index.js",
+    "qr/": "https://unpkg.com/qr@0.5.3/"
   },
   "scopes": {}
 }
