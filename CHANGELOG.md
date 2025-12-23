@@ -7,6 +7,11 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [v1.6.1] - 2025-12-23
+
+### Added
+- Add `@aegisjsproject/qr-encoder`
+
 ## [v1.6.0] - 2025-12-18
 
 ### Added
