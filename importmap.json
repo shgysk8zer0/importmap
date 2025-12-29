@@ -90,7 +90,15 @@
     "firebase/storage": "https://www.gstatic.com/firebasejs/10.12.1/firebase-storage.js",
     "firebase/analytics": "https://www.gstatic.com/firebasejs/10.12.1/firebase-analytics.js",
     "qr": "https://unpkg.com/qr@0.5.3/index.js",
-    "qr/": "https://unpkg.com/qr@0.5.3/"
+    "qr/": "https://unpkg.com/qr@0.5.3/",
+    "lit": "https://unpkg.com/lit@3.3.2/index.js",
+    "lit/": "https://unpkg.com/lit@3.3.2/",
+    "lit-html": "https://unpkg.com/lit-html@3.3.2/lit-html.js",
+    "lit-html/": "https://unpkg.com/lit-html@3.3.2/",
+    "lit-element": "https://unpkg.com/lit-element@4.2.2/lit-element.js",
+    "lit-element/": "https://unpkg.com/lit-element@4.2.2/",
+    "@lit/reactive-element": "https://unpkg.com/@lit/reactive-element@2.1.2/reactive-element.js",
+    "@lit/reactive-element/": "https://unpkg.com/@lit/reactive-element@2.1.2/"
   },
   "scopes": {}
 }
