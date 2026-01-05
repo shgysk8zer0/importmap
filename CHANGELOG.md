@@ -7,6 +7,14 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [v1.7.1] - 2026-01-05
+
+### Added
+- Add `@aegisjsproject/escape` & `@aegisjsproject/core`
+
+### Changed
+- Update `@shgysk8zer0/polyfills` & `@aegisjsproject/core`
+
 ## [v1.7.0] - 2025-12-29
 
 ### Added
