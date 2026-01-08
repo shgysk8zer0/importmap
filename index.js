@@ -109,7 +109,8 @@ const imports$1 = {
 	"lit-element": "https://unpkg.com/lit-element@4.2.2/lit-element.js",
 	"lit-element/": "https://unpkg.com/lit-element@4.2.2/",
 	"@lit/reactive-element": "https://unpkg.com/@lit/reactive-element@2.1.2/reactive-element.js",
-	"@lit/reactive-element/": "https://unpkg.com/@lit/reactive-element@2.1.2/"
+	"@lit/reactive-element/": "https://unpkg.com/@lit/reactive-element@2.1.2/",
+	"@awesome.me/webawesome/": "https://unpkg.com/@awesome.me/webawesome@3.1.0/"
 };
 const scopes$1 = {
 };

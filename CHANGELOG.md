@@ -7,6 +7,11 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [v1.7.5] - 2026-01-08
+
+### Added
+- Add `@awesome.me/webawesome`
+
 ## [v1.7.4] - 2026-01-06
 
 ### Changed
