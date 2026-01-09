@@ -8,6 +8,7 @@ const { imports, scopes } = json;
 export class Importmap {
 	#imports = {};
 	#scopes = {};
+	#base;
 
 	constructor({ imports: i = imports, scopes: s = scopes } = {}) {
 		this.#imports = i;
@@ -44,6 +45,48 @@ export class Importmap {
 
 	toString() {
 		return JSON.stringify(this);
+	}
+
+	get baseUrl() {
+		return this.#base;
+	}
+
+	set baseUrl(val) {
+		if (typeof val === 'string' && URL.canParse(val)) {
+			this.#base = val;
+		}
+	}
+
+	resolve(specifier, base = this.baseUrl) {
+		if (specifier instanceof URL) {
+			return specifier.href;
+		} else if (typeof specifier !== 'string') {
+			return null;
+		} else if (this.has(specifier)) {
+			return URL.parse(this.get(specifier), this.baseUrl)?.href ?? null;
+		} else if (URL.canParse(specifier)) {
+			return specifier;
+		} else if (! specifier.startsWith('.')) {
+			// Find the longest match
+			const matches = Object.keys(this.imports)
+				.filter(key => key.endsWith('/') && specifier.startsWith(key))
+				.sort((a, b) => b.length - a.length);
+
+			if (matches.length === 0) {
+				return null;
+			} else {
+				const match = matches[0];
+				const target = imports[match];
+				const subpath = specifier.slice(match.length);
+				// Resolve the mapping target against the map's base, then the subpath against that
+				const resolvedTarget = new URL(target, this.baseUrl);
+				return new URL(subpath, resolvedTarget).href;
+			}
+		} else if (typeof base === 'string') {
+			return URL.parse(specifier, base)?.href ?? null;
+		} else {
+			return null;
+		}
 	}
 
 	async importLocalPackage(name = 'package.json', { signal } = {}) {
