@@ -29,12 +29,12 @@ const imports$1 = {
 	"@shgysk8zer0/geoutils/": "https://unpkg.com/@shgysk8zer0/geoutils@1.0.6/",
 	"@aegisjsproject/trusted-types": "https://unpkg.com/@aegisjsproject/trusted-types@1.0.2/bundle.min.js",
 	"@aegisjsproject/trusted-types/": "https://unpkg.com/@aegisjsproject/trusted-types@1.0.2/",
-	"@aegisjsproject/parsers": "https://unpkg.com/@aegisjsproject/parsers@0.1.4/bundle.min.js",
-	"@aegisjsproject/parsers/": "https://unpkg.com/@aegisjsproject/parsers@0.1.4/",
+	"@aegisjsproject/parsers": "https://unpkg.com/@aegisjsproject/parsers@0.1.5/bundle.min.js",
+	"@aegisjsproject/parsers/": "https://unpkg.com/@aegisjsproject/parsers@0.1.5/",
 	"@aegisjsproject/sanitizer": "https://unpkg.com/@aegisjsproject/sanitizer@0.2.4/sanitizer.js",
 	"@aegisjsproject/sanitizer/": "https://unpkg.com/@aegisjsproject/sanitizer@0.2.4/",
-	"@aegisjsproject/core": "https://unpkg.com/@aegisjsproject/core@0.2.30/core.js",
-	"@aegisjsproject/core/": "https://unpkg.com/@aegisjsproject/core@0.2.30/",
+	"@aegisjsproject/core": "https://unpkg.com/@aegisjsproject/core@0.2.32/core.js",
+	"@aegisjsproject/core/": "https://unpkg.com/@aegisjsproject/core@0.2.32/",
 	"@aegisjsproject/styles": "https://unpkg.com/@aegisjsproject/styles@0.2.7/styles.js",
 	"@aegisjsproject/styles/": "https://unpkg.com/@aegisjsproject/styles@0.2.7/",
 	"@aegisjsproject/component": "https://unpkg.com/@aegisjsproject/component@0.1.7/component.js",
@@ -72,9 +72,6 @@ const imports$1 = {
 	"@aegisjsproject/qr-encoder/": "https://unpkg.com/@aegisjsproject/qr-encoder@1.0.1/",
 	"@aegisjsproject/escape": "https://unpkg.com/@aegisjsproject/escape@1.0.4/index.min.js",
 	"@aegisjsproject/escape/": "https://unpkg.com/@aegisjsproject/escape@1.0.4/",
-	"@aegisjsproject/escape/html": "https://unpkg.com/@aegisjsproject/escape@1.0.4/html.min.js",
-	"@aegisjsproject/escape/trusted-html": "https://unpkg.com/@aegisjsproject/escape@1.0.4/trusted-html.min.js",
-	"@aegisjsproject/escape/css": "https://unpkg.com/@aegisjsproject/escape@1.0.4/css.min.js",
 	"@kernvalley/components/": "https://unpkg.com/@kernvalley/components@2.0.9/",
 	"@webcomponents/custom-elements": "https://unpkg.com/@webcomponents/custom-elements@1.6.0/custom-elements.min.js",
 	leaflet: "https://unpkg.com/leaflet@1.9.4/dist/leaflet-src.esm.js",
@@ -163,6 +160,7 @@ const { imports, scopes } = json;
 class Importmap {
 	#imports = {};
 	#scopes = {};
+	#base;
 
 	constructor({ imports: i = imports, scopes: s = scopes } = {}) {
 		this.#imports = i;
@@ -199,6 +197,48 @@ class Importmap {
 
 	toString() {
 		return JSON.stringify(this);
+	}
+
+	get baseUrl() {
+		return this.#base;
+	}
+
+	set baseUrl(val) {
+		if (typeof val === 'string' && URL.canParse(val)) {
+			this.#base = val;
+		}
+	}
+
+	resolve(specifier, base = this.baseUrl) {
+		if (specifier instanceof URL) {
+			return specifier.href;
+		} else if (typeof specifier !== 'string') {
+			return null;
+		} else if (this.has(specifier)) {
+			return URL.parse(this.get(specifier), this.baseUrl)?.href ?? null;
+		} else if (URL.canParse(specifier)) {
+			return specifier;
+		} else if (! specifier.startsWith('.')) {
+			// Find the longest match
+			const matches = Object.keys(this.imports)
+				.filter(key => key.endsWith('/') && specifier.startsWith(key))
+				.sort((a, b) => b.length - a.length);
+
+			if (matches.length === 0) {
+				return null;
+			} else {
+				const match = matches[0];
+				const target = imports[match];
+				const subpath = specifier.slice(match.length);
+				// Resolve the mapping target against the map's base, then the subpath against that
+				const resolvedTarget = new URL(target, this.baseUrl);
+				return new URL(subpath, resolvedTarget).href;
+			}
+		} else if (typeof base === 'string') {
+			return URL.parse(specifier, base)?.href ?? null;
+		} else {
+			return null;
+		}
 	}
 
 	async importLocalPackage(name = 'package.json', { signal } = {}) {

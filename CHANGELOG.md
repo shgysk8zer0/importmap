@@ -7,6 +7,14 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [v1.7.6] - 2026-01-09
+
+### Added
+- Add `Importmap.resolve()`
+
+### Changed
+- Update `@aegisjsproject/parsers` & `@aegisjsproject/core`
+
 ## [v1.7.5] - 2026-01-08
 
 ### Added
