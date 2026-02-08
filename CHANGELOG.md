@@ -7,6 +7,14 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [v1.7.8] - 2026-02-07
+
+### Added
+- Add `@aegisjsproject/disposable` and `@shgysk8zer0/core-css`
+
+### Changed
+- Update various imports
+
 ## [v1.7.7] - 2026-01-13
 
 ### Changed
