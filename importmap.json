@@ -78,7 +78,7 @@
     "highlight.js/": "https://unpkg.com/@highlightjs/cdn-assets@11.11.1/es/",
     "@highlightjs/cdn-assets": "https://unpkg.com/@highlightjs/cdn-assets@11.11.1/es/core.min.js",
     "@highlightjs/cdn-assets/": "https://unpkg.com/@highlightjs/cdn-assets@11.11.1/es/",
-    "marked": "https://unpkg.com/marked@17.0.2/lib/marked.esm.js",
+    "marked": "https://unpkg.com/marked@17.0.3/lib/marked.esm.js",
     "marked-highlight": "https://unpkg.com/marked-highlight@2.2.3/src/index.js",
     "yaml": "https://unpkg.com/yaml@2.8.2/browser/dist/index.js",
     "yaml/": "https://unpkg.com/yaml@2.8.2/browser/dist/",
