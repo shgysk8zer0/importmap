@@ -7,6 +7,11 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [v1.7.10] - 2026-02-19
+
+### Added
+- Add `@shgysk8zer0/signals` as polyfill for Signals API (stage 1)
+
 ## [v1.7.9] - 2026-02-08
 
 ### Changed
