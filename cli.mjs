@@ -1,5 +1,4 @@
 #!/usr/bin/env node
-/* eslint-env node */
 
 import { readJSONFile, writeJSONFile } from '@shgysk8zer0/npm-utils/json.js';
 import { readYAMLFile, writeYAMLFile } from '@shgysk8zer0/npm-utils/yaml.js';
