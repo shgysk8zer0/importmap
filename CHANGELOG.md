@@ -7,8 +7,16 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [v1.7.11] - 2026-02-27
+
 ### Added
-- Add specifier for `@highlightjs/cdn-assets/styles/` / `highlight.js/styles/`,
+- Add specifier for `@highlightjs/cdn-assets/styles/` / `highlight.js/styles/`
+
+### Changed
+- Update `@aegisjsproject/router` and `@aegisjsproject/barcodescanner`
+
+### Fixed
+- Fix path for `@aegisjsproject/url`
 
 ## [v1.7.11] - 2026-02-20
 
