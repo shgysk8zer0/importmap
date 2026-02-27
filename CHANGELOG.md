@@ -7,6 +7,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+### Added
+- Add specifier for `@highlightjs/cdn-assets/styles/` / `highlight.js/styles/`,
+
 ## [v1.7.11] - 2026-02-20
 
 ### Changed
