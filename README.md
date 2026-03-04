@@ -73,6 +73,9 @@ Which results in:
 
 ## CLI
 
+
+### `importmap-utils`
+
 Create / update local importmap JSON or YAML files.
 
 ```
@@ -89,6 +92,22 @@ Options:
   -h, --help                 display help for command
 ```
 
+### `importmap-html`
+
+Updates the `<script type="importmap">` in an HTML file
+```
+Usage: importmap-html [options] <html-file>
+
+CLI utility for updating `<script type="importmap">` in HTML files
+
+Options:
+  -V, --version                output the version number
+  -a, --algo [algo]            Hashing algorigthm to use for `integrity` (default: "SHA-384")
+  -s, --spaces [spaces]        Spaces to indent with
+  -i, --importmap [importmap]  Source importmap.json file.
+  -h, --help                   display help for command
+```
+
 ### CLI Example
 
 ```bash
@@ -97,4 +116,8 @@ importmap-utils -o importmap.json
 # Or...
 
 importmap-utils -i importmap.json -o importmap.yml -f yaml
+
+importmap-html index.html
+
+importmap index.html -i imports.json -a sha-512
 ```

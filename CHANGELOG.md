@@ -7,6 +7,20 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [v1.8.1] -- 2026-03-04
+
+### Added
+- Add function/CLI to update `<script type="importmap">` in HTML files
+- Add support for parsing a `<script type="importmap">` from an HTML file
+- Add JSDocs
+
+### Fixed
+- Fix bad config for `bin` in `package.json`
+- Ignore generated `index.js` file
+
+### Changed
+- Use `@shgysk8zer0/rollup-import` instead of `@rollup/plugin-json`
+
 ## [v1.8.0] - 2026-03-03
 
 ### Added
