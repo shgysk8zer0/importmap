@@ -63,8 +63,8 @@ const imports$1 = {
 	"@aegisjsproject/router/": "https://unpkg.com/@aegisjsproject/router@1.1.15/",
 	"@aegisjsproject/callback-registry": "https://unpkg.com/@aegisjsproject/callback-registry@2.0.0/callbackRegistry.js",
 	"@aegisjsproject/callback-registry/": "https://unpkg.com/@aegisjsproject/callback-registry@2.0.0/",
-	"@aegisjsproject/attempt": "https://unpkg.com/@aegisjsproject/attempt@1.0.5/attempt.js",
-	"@aegisjsproject/attempt/": "https://unpkg.com/@aegisjsproject/attempt@1.0.5/",
+	"@aegisjsproject/attempt": "https://unpkg.com/@aegisjsproject/attempt@1.0.7/attempt.js",
+	"@aegisjsproject/attempt/": "https://unpkg.com/@aegisjsproject/attempt@1.0.7/",
 	"@aegisjsproject/secret-store": "https://unpkg.com/@aegisjsproject/secret-store@1.0.1/commands.min.js",
 	"@aegisjsproject/commands/": "https://unpkg.com/@aegisjsproject/commands@1.0.1/",
 	"@aegisjsproject/commands": "https://unpkg.com/@aegisjsproject/commands@1.0.1/commands.min.js",
@@ -114,7 +114,8 @@ const imports$1 = {
 	"lit-element/": "https://unpkg.com/lit-element@4.2.2/",
 	"@lit/reactive-element": "https://unpkg.com/@lit/reactive-element@2.1.2/reactive-element.js",
 	"@lit/reactive-element/": "https://unpkg.com/@lit/reactive-element@2.1.2/",
-	"@awesome.me/webawesome/": "https://unpkg.com/@awesome.me/webawesome@3.2.1/"
+	"@awesome.me/webawesome/": "https://unpkg.com/@awesome.me/webawesome@3.2.1/",
+	"normalize.css": "https://unpkg.com/normalize.css@8.0.1/normalize.css"
 };
 const scopes$1 = {
 };

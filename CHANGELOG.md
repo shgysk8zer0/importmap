@@ -7,6 +7,15 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [v1.8.0] - 2026-03-03
+
+### Added
+- Add `normalize.css` for importing `with { type: 'css' }`
+
+### Changed
+- Update `@aegisjsproject/attempt`
+- Update dependencies
+
 ## [v1.7.13] - 2026-03-02
 
 ### Changed
