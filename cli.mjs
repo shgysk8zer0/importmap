@@ -2,10 +2,12 @@
 
 import { readJSONFile, writeJSONFile } from '@shgysk8zer0/npm-utils/json.js';
 import { readYAMLFile, writeYAMLFile } from '@shgysk8zer0/npm-utils/yaml.js';
+import { readFile } from 'node:fs/promises';
 import { program } from 'commander';
 import { extname } from 'node:path';
-import { importmap } from './index.mjs';
-// import { updateImportMap } from './html.js';
+import { IMPORTMAP_EXP } from './consts.js';
+import pkg from './package.json' with { type: 'json' };
+import importmap from './importmap.json' with { type: 'json' };
 
 function guessFileType(file) {
 	const ext = extname(file).toLowerCase();
@@ -34,15 +36,19 @@ async function parse(file, { encoding, signal } = {}) {
 		case 'json':
 			return readJSONFile(file, { encoding, signal });
 
+		case 'html':
+			return readFile(file, { encoding, signal }).then(html => {
+				const match = IMPORTMAP_EXP.exec(html);
+				return JSON.parse(match?.groups?.content ?? '{}');
+			});
+
 	}
 }
 
 async function init() {
-	const { version: VERSION } = await readJSONFile(new URL('./package.json', import.meta.url));
-
 	program
-		.name('importmap-utils')
-		.version(VERSION)
+		.name(Object.keys(pkg.bin)[0])
+		.version(pkg.version)
 		.description('CLI utility for updating importmap files')
 		.option('-i, --input [input]', 'local JSON or YAML importmap file')
 		.option('-e, --encoding [encoding]', 'encoding', 'utf8')
@@ -58,10 +64,10 @@ async function init() {
 
 init().then(async ({ opts: { input, encoding, format, output }}) => {
 	const mod = typeof input === 'string'
-		? await parse(input, { encoding }).then(({ imports, scope = {}, ...rest }) => ({
+		? await parse(input, { encoding }).then(({ imports, scopes = {}, ...rest }) => ({
 			...rest,
 			imports: { ...imports, ...importmap.imports },
-			scope: { ...scope, ...importmap.scope },
+			scopes: { ...scopes, ...importmap.scopes },
 		}))
 		: importmap;
 
@@ -73,9 +79,5 @@ init().then(async ({ opts: { input, encoding, format, output }}) => {
 		case 'yaml':
 			await writeYAMLFile(output, mod, { encoding });
 			break;
-
-	// 	case 'html':
-	// 		await updateImportMap(output, { spaces: null });
-	// 		break;
 	}
 });

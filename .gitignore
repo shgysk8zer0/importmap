@@ -1,6 +1,7 @@
 *.cjs
 cli.js
 index.js
+html.js
 importmap.js
 *.min.*
 *.map

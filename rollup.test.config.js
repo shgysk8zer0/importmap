@@ -1,6 +1,6 @@
 import { getConfig } from '@shgysk8zer0/js-utils/rollup';
 import { rollupImport, rollupImportMeta } from '@shgysk8zer0/rollup-import';
-import { importmap } from '@shgysk8zer0/importmap';
+import importmap from '@shgysk8zer0/importmap/importmap.json' with { type: 'json' };
 
 export default getConfig('./test/index.js', {
 	plugins: [

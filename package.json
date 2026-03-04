@@ -1,6 +1,6 @@
 {
   "name": "@shgysk8zer0/importmap",
-  "version": "1.8.0",
+  "version": "1.8.1",
   "engines": {
     "node": ">=20.10.0"
   },
@@ -16,6 +16,9 @@
     },
     "./importmap": {
       "import": "./importmap.js"
+    },
+    "./*.json": {
+      "import": "./*.json"
     },
     "./*.js": {
       "import": "./*.js",
@@ -33,7 +36,8 @@
     }
   },
   "bin": {
-    "importmap-utils": "./cli.mjs"
+    "importmap-utils": "cli.js",
+    "importmap-html": "html.js"
   },
   "scripts": {
     "start": "npx @shgysk8zer0/http-server -c ./http.config.js",
@@ -64,7 +68,6 @@
   },
   "homepage": "https://github.com/shgysk8zer0/importmap#readme",
   "devDependencies": {
-    "@rollup/plugin-json": "^6.1.0",
     "@shgysk8zer0/eslint-config": "^1.0.7",
     "@shgysk8zer0/js-utils": "^1.0.3",
     "@shgysk8zer0/rollup-import": "^2.0.2",

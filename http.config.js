@@ -9,14 +9,14 @@ const icon =  `<svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
 
 const script = String.dedent`
 	import '@shgysk8zer0/polyfills';
-	import { reset } from '@aegisjsproject/styles/reset.js';
-	import { properties } from '@aegisjsproject/styles/properties.js';
-	import { baseTheme, lightTheme, darkTheme } from '@aegisjsproject/styles/theme.js';
-	import { btn, btnPrimary, btnSecondary, btnWarning, btnDanger } from '@aegisjsproject/styles/button.js';
-	import { forms } from '@aegisjsproject/styles/forms.js';
-	import { scrollbar } from '@aegisjsproject/styles/scrollbar.js';
-	import { displays, positions, fonts, colors, utilities } from '@aegisjsproject/styles/misc.js';
-	import { transform, transition, animate, keyframes } from '@aegisjsproject/styles/animations.js';
+	import reset from '@aegisjsproject/styles/css/reset.css' with { type: 'css' };
+	import properties from '@aegisjsproject/styles/css/properties.css' with { type: 'css' };
+	import theme from '@aegisjsproject/styles/css/theme.css' with { type: 'css' };
+	import btn from '@aegisjsproject/styles/css/button.css' with { type: 'css' };
+	import forms from '@aegisjsproject/styles/css/forms.css' with { type: 'css' };
+	import scrollbar from '@aegisjsproject/styles/css/scrollbar.css' with { type: 'css' };
+	import misc from '@aegisjsproject/styles/css/misc.css' with { type: 'css' };
+	import animations from '@aegisjsproject/styles/css/animations.css' with { type: 'css' };
 	import { html } from '@aegisjsproject/core/parsers/html.js';
 	import { css } from '@aegisjsproject/core/parsers/css.js';
 	import { onClick, observeEvents } from '@aegisjsproject/callback-registry/events.js';
@@ -34,11 +34,7 @@ const script = String.dedent`
 		}
 	\`;
 
-	document.adoptedStyleSheets = [
-		properties, reset, baseTheme, lightTheme, darkTheme, btn, btnPrimary, btnSecondary,
-		btnWarning, btnDanger, scrollbar, displays, positions, fonts, colors, utilities,
-		transform, transition, animate, keyframes, custom,
-	];
+	document.adoptedStyleSheets = [properties, reset, theme, btn, scrollbar, misc, animations];
 
 	trustedTypes.createPolicy('default', {
 		createHTML(input, config) {
