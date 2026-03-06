@@ -82,7 +82,7 @@
     "@highlightjs/cdn-assets": "https://unpkg.com/@highlightjs/cdn-assets@11.11.1/es/core.min.js",
     "@highlightjs/cdn-assets/": "https://unpkg.com/@highlightjs/cdn-assets@11.11.1/es/",
     "@highlightjs/cdn-assets/styles/": "https://unpkg.com/@highlightjs/cdn-assets@11.11.1/styles/",
-    "marked": "https://unpkg.com/marked@17.0.3/lib/marked.esm.js",
+    "marked": "https://unpkg.com/marked@17.0.4/lib/marked.esm.js",
     "marked-highlight": "https://unpkg.com/marked-highlight@2.2.3/src/index.js",
     "yaml": "https://unpkg.com/yaml@2.8.2/browser/dist/index.js",
     "yaml/": "https://unpkg.com/yaml@2.8.2/browser/dist/",
@@ -108,7 +108,7 @@
     "lit-element/": "https://unpkg.com/lit-element@4.2.2/",
     "@lit/reactive-element": "https://unpkg.com/@lit/reactive-element@2.1.2/reactive-element.js",
     "@lit/reactive-element/": "https://unpkg.com/@lit/reactive-element@2.1.2/",
-    "@awesome.me/webawesome/": "https://unpkg.com/@awesome.me/webawesome@3.2.1/",
+    "@awesome.me/webawesome/": "https://unpkg.com/@awesome.me/webawesome@3.3.1/",
     "normalize.css": "https://unpkg.com/normalize.css@8.0.1/normalize.css"
   },
   "scopes": {}
