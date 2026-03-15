@@ -7,7 +7,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
-## [v1.8.3]
+## [v1.8.3] - 2026-03-15
 
 ### Updates
 - Update `@aegisjsproject/styles`, `@aegisjsproject/iota`, & `@aegisjsproject/callback-registry`
