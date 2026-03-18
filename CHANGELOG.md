@@ -7,6 +7,12 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [v1.8.6] - 2026-03-18
+
+### Changed
+- Update `@aegisjsproject/iota`
+- Update `@aegisjsproject/firebase-account-routes`
+
 ### [v1.8.5] - 2026-03-16
 
 ### Changed
