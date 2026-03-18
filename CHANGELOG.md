@@ -7,6 +7,11 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [v1.8.7] - 2026-03-18
+
+### Changed
+- Update `@aegisjsproject/iota` (adds `$html` tagged template)
+
 ## [v1.8.6] - 2026-03-18
 
 ### Changed
