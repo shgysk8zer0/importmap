@@ -110,7 +110,7 @@
     "lit-element/": "https://unpkg.com/lit-element@4.2.2/",
     "@lit/reactive-element": "https://unpkg.com/@lit/reactive-element@2.1.2/reactive-element.js",
     "@lit/reactive-element/": "https://unpkg.com/@lit/reactive-element@2.1.2/",
-    "@awesome.me/webawesome/": "https://unpkg.com/@awesome.me/webawesome@3.3.1/",
+    "@awesome.me/webawesome/": "https://unpkg.com/@awesome.me/webawesome@3.4.0/",
     "normalize.css": "https://unpkg.com/normalize.css@8.0.1/normalize.css"
   },
   "scopes": {}
