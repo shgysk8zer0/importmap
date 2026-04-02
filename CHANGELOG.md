@@ -7,6 +7,14 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [v1.8.11] - 2026-04-02
+
+### Changed
+- Update `@aegisjsproject/iota`
+
+### Fixed
+- Fixed comparing versions to detect updates
+
 ## [v1.8.10] - 2026-04-01
 
 ### Changed

@@ -12,7 +12,7 @@ export async function update(imports) {
 			const { scope, pkg, version: oldVersion, module } = parseUnpkgURL(val);
 			const version = await getLatestVersion({ scope, pkg });
 
-			if (! updated && version > oldVersion) {
+			if (! updated && version !== oldVersion) {
 				updated = true;
 			}
 
