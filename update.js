@@ -1,3 +1,3 @@
-import { unpkg } from '@shgysk8zer0/importmap';
+import { updateJSON } from '@shgysk8zer0/importmap/unpkg.js';
 
-await unpkg.updateJSON('importmap.json').catch(console.error);
+await updateJSON('importmap.json').catch(console.error);
