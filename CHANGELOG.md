@@ -7,6 +7,11 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [v1.8.13] - 2026-04-07
+
+### Changed
+- Update `@aegisjsproject/styles`, `@shgysk8zer0/core-css`, `marked`, & `marked-highlight`
+
 ## [v1.8.12] - 2026-04-06
 
 ### Changed
