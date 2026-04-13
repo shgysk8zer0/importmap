@@ -7,6 +7,11 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [v1.8.17] - 2026-04-13
+
+### Changed
+- Update `@aegisjsproject/disposable-registry`
+
 ## [v1.8.16] - 2026-04-13
 
 ### Added
