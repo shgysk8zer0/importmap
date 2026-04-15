@@ -7,6 +7,11 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [v1.8.19] - 2026-04-14
+
+### Added
+- Add `@aegisjsproject/hermes`
+
 ## [v1.8.18] - 2026-04-14
 
 ### Changed
