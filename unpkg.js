@@ -51,7 +51,15 @@ export async function updateJSON(file) {
 		return await updateJSON(getFileURL(file));
 	} else if (file instanceof URL && file.protocol === 'file:') {
 		const importmap = await readJSONFile(file);
-		const { updated, imports } = await update(importmap.imports);
+		let { updated, imports } = await update(importmap.imports);
+		const pkg = await import(import.meta.resolve('./package.json'), { with: { type: 'json' }});
+		const { name, version } = pkg.default;
+		const ownURL = new URL(`https://unpkg.com/${name}@${version}/`);
+
+		if (imports[name + '/'] !== ownURL) {
+			updated = true;
+			imports[name + '/'] = ownURL;
+		}
 
 		if (updated) {
 			await writeJSONFile(file, {  ...importmap, imports: { ...importmap.imports, ...imports }});

@@ -1,6 +1,6 @@
 {
   "name": "@shgysk8zer0/importmap",
-  "version": "1.9.0",
+  "version": "1.9.1",
   "engines": {
     "node": ">=20.10.0"
   },
@@ -42,7 +42,8 @@
   "scripts": {
     "start": "npx @shgysk8zer0/http-server -c ./http.config.js",
     "test": "npm run lint:js && npm run run:tests && npm run test:imports",
-    "preversion": "npm test && npm run build",
+    "preversion": "npm test",
+    "postversion": "npm run update",
     "prepare": "npm test && npm run build",
     "update": "node ./update.js",
     "lint:js": "eslint . --ignore-pattern 'importmap.mjs'",

@@ -7,6 +7,11 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [v1.9.1] - 2026-04-15
+
+### Added
+- Add self (current version) to `importmap.json`
+
 ## [1.9.0] - 2026-04-15
 
 ### Added
