@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 
 import { program } from 'commander';
-import { updateImportmap } from './index.mjs';
+import { updateImportmap } from './index.js';
 import { readFile } from 'node:fs/promises';
 import pkg from './package.json' with { type: 'json' };
 

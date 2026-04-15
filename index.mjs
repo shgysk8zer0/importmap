@@ -1,7 +1,12 @@
 import { readFile, writeFile } from 'node:fs/promises';
-import { Importmap, importmap, imports, scopes } from './importmap.mjs';
+import { Importmap } from './imap.js';
+import data from './importmap.json' with { type: 'json' };
 import { sri, DEFAULT_ALGO } from './hash.js';
 import { IMPORTMAP_EXP } from './consts.js';
+
+export const imports = data.imports;
+export const scopes = data.scopes;
+export const importmap = new Importmap(data);
 
 /**
  * @typedef {Object<string, string>} ImportMapSpecifiers
@@ -128,4 +133,4 @@ export async function updateImportmap(fileName = 'index.html', {
 	}
 }
 
-export { importmap, imports, scopes, Importmap };
+export { Importmap };

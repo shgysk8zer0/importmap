@@ -7,6 +7,17 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [1.9.0] - 2026-04-15
+
+### Added
+- Add `Importmap.importFromScript()` (browser only)
+- Detect `name` attribute in `<script type="importmap">`
+
+### Changed
+- Move `Importmap` class to own module
+- Do not set default `imports` & `scopes` in constructor
+- Use `import()` for `node:fs/promises` & `node:path` to make overall class compatible in browsers
+
 ## [v1.8.20] - 2026-04-15
 
 ### Changed

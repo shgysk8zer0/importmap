@@ -1,17 +1,20 @@
 import { test, describe } from 'node:test';
 import assert from 'node:assert';
 import { sri, SHA256, SHA384, SHA512 } from './hash.js';
-import { Importmap } from './importmap.mjs';
+import { Importmap } from './imap.js';
+import { IMPORTMAP_EXP } from './consts.js';
+import map from './importmap.json' with { type: 'json' };
 
 describe('Test SRI hashing', () => {
 	const data = 'Hello, World!';
 
 	test('Check importmap.resolve()', async () => {
-		const importmap = new Importmap();
+		const importmap = new Importmap(map);
 		await importmap.importLocalPackage();
-		importmap.baseUrl = 'https://localhost/';
+		importmap.baseUrl = 'https://example.com/';
 		assert.strictEqual(importmap.resolve('@shgysk8zer0/importmap'), importmap.baseUrl + importmap.imports['@shgysk8zer0/importmap'].substring(1));
 		assert.strictEqual(importmap.resolve('@aegisjsproject/core/parsers/html.js'), importmap.imports['@aegisjsproject/core/'] + 'parsers/html.js');
+		assert.strictEqual(importmap.resolve('./foo.js'), 'https://example.com/foo.js', 'Relative paths should resolve to full URLs.');
 	});
 
 	test('Check SHA-256 SRI', async () => {
@@ -47,5 +50,21 @@ describe('Test SRI hashing', () => {
 			name: 'NotSupportedError',
 			message: 'Unrecognized algorithm name'
 		}, 'Should throw NotSupportedError for unsupported algorithm.');
+	});
+
+	test('Check parsing from HTML', () => {
+		const name = 'importmap';
+		const nonce = 'abc';
+		const content = '{}';
+		const base = `<script type="importmap">${content}</script>`;
+		const withName = `<script type="importmap" name="${name}">${content}</script>`;
+		const withNonce = `<script type="importmap" nonce="${nonce}">${content}</script>`;
+		const fullScript = `<script type="importmap" nonce="${nonce}" name="${name}">${content}</script>`;
+		const parse = script => ({ ...IMPORTMAP_EXP.exec(script)?.groups ?? {}});
+
+		assert.deepStrictEqual(parse(base), { content, name: undefined, nonce: undefined }, 'Base script should only have content.');
+		assert.deepStrictEqual(parse(withName), { content, nonce: undefined, name }, 'Script should only have content & name.');
+		assert.deepStrictEqual(parse(withNonce), { content, nonce, name: undefined }, 'Script with nonce should have nonce & content.');
+		assert.deepStrictEqual(parse(fullScript), { name, nonce, content }, 'Full script should have all attribbutes & content.');
 	});
 });
