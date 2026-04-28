@@ -58,6 +58,7 @@ export async function updateJSON(file) {
 
 		if (imports[name + '/'] !== ownURL) {
 			updated = true;
+			imports[name] = `${ownURL}importmap.js`;
 			imports[name + '/'] = ownURL;
 		}
 

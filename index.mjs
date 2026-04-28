@@ -1,3 +1,4 @@
+import '@shgysk8zer0/polyfills';
 import { readFile, writeFile } from 'node:fs/promises';
 import { Importmap } from './imap.js';
 import data from './importmap.json' with { type: 'json' };
