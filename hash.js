@@ -1,5 +1,3 @@
-import '@shgysk8zer0/polyfills';
-
 export const SHA1 = 'SHA-1';
 export const SHA256 = 'SHA-256';
 export const SHA384 = 'SHA-384';

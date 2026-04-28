@@ -1,6 +1,6 @@
 {
   "name": "@shgysk8zer0/importmap",
-  "version": "1.9.9",
+  "version": "1.9.10",
   "engines": {
     "node": ">=20.10.0"
   },
@@ -8,7 +8,7 @@
   "type": "module",
   "module": "./index.js",
   "main": "./index.cjs",
-  "unpkg": "./index.js",
+  "unpkg": "./importmap.js",
   "exports": {
     ".": {
       "import": "./index.js",

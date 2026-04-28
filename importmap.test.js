@@ -1,3 +1,4 @@
+import '@shgysk8zer0/polyfills';
 import { test, describe } from 'node:test';
 import assert from 'node:assert';
 import { sri, SHA256, SHA384, SHA512 } from './hash.js';
