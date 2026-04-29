@@ -7,6 +7,11 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [v1.9.11] - 2026-04-29
+
+### Added
+- Add `@aegisjsproject/atlas`
+
 ## [v1.9.10] - 2026-04-28
 
 ### Added
