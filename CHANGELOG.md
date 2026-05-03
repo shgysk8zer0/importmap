@@ -7,12 +7,21 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
-## [v1.9.13] - 2026-05-03
+## [v1.9.15] - 2026-05-03
+
+### Fixed
+- Fix misaligned version
+
+## [v1.9.14] - 2026-05-03
 
 ### Changed
 - Update `@aegisjsproject/atlas`
 - Update `@aegisjsproject/button`
 - Update `marked` & `yaml`
+
+## [v1.9.13] - 2026-04-30
+
+### Changed
 - Update `@aegisjsproject/router` (adds View Transitions basics)
 
 ## [v1.9.12] - 2026-04-29
