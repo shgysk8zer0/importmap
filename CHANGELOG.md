@@ -7,6 +7,11 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [v1.9.18] - 2026-05-12
+
+### Changed
+- Update `@aegisjsproject/toast-message`
+
 ## [v1.9.17] - 2026-05-12
 
 ### Added
