@@ -72,11 +72,11 @@
     "@shgysk8zer0/eslint-config": "^1.0.9",
     "@shgysk8zer0/js-utils": "^1.0.6",
     "@shgysk8zer0/rollup-import": "^2.0.3",
-    "eslint": "^10.4.0"
+    "eslint": "^10.4.1"
   },
   "dependencies": {
     "@shgysk8zer0/npm-utils": "^1.1.6",
     "@shgysk8zer0/polyfills": "^0.6.3",
-    "commander": "^14.0.3"
+    "commander": "^15.0.0"
   }
 }
