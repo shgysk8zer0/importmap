@@ -1,6 +1,6 @@
 {
   "name": "@shgysk8zer0/importmap",
-  "version": "1.9.21",
+  "version": "1.10.0",
   "engines": {
     "node": ">=20.10.0"
   },
@@ -75,8 +75,11 @@
     "eslint": "^10.4.1"
   },
   "dependencies": {
-    "@shgysk8zer0/npm-utils": "^1.1.6",
-    "@shgysk8zer0/polyfills": "^0.6.3",
+    "@shgysk8zer0/npm-utils": "^1.2.0",
+    "@shgysk8zer0/polyfills": "^0.8.0",
     "commander": "^15.0.0"
+  },
+  "allowScripts": {
+    "fsevents@2.3.3": true
   }
 }
