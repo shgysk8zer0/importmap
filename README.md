@@ -44,13 +44,13 @@ import { rollupImport } from '@shgysk8zer0/rollup-import';
 import { imports } from '@shgysk8zer0/importmap';
 
 export default {
-	input: 'index.js',
-	output: {
-		file: 'index.min.js',
-		format: 'iife',
-		sourcemap: true,
-	},
-	plugins: [rollupImport({ imports })],
+  input: 'index.js',
+  output: {
+    file: 'index.min.js',
+    format: 'iife',
+    sourcemap: true,
+  },
+  plugins: [rollupImport({ imports })],
 };
 ```
 
@@ -78,7 +78,7 @@ Which results in:
 
 Create / update local importmap JSON or YAML files.
 
-```
+```text
 Usage: importmap-utils [options]
 
 CLI utility for updating importmap files
@@ -95,7 +95,8 @@ Options:
 ### `importmap-html`
 
 Updates the `<script type="importmap">` in an HTML file
-```
+
+```text
 Usage: importmap-html [options] <html-file>
 
 CLI utility for updating `<script type="importmap">` in HTML files
