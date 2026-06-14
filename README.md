@@ -28,7 +28,7 @@ Intended for use with [`rollup`](https://rollupjs.org/) and [`@shgysk8zer0/rollu
 
 - [Code of Conduct](./.github/CODE_OF_CONDUCT.md)
 - [Contributing](./.github/CONTRIBUTING.md)
-<!-- - [Security Policy](./.github/SECURITY.md) -->
+- [Security Policy](./.github/SECURITY.md)
 
 ## Installation
 
