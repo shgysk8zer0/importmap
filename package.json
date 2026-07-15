@@ -72,7 +72,7 @@
     "@shgysk8zer0/eslint-config": "^1.1.0",
     "@shgysk8zer0/js-utils": "^1.1.0",
     "@shgysk8zer0/rollup-import": "^2.1.0",
-    "eslint": "^10.6.0"
+    "eslint": "^10.7.0"
   },
   "dependencies": {
     "@shgysk8zer0/npm-utils": "^1.2.0",
